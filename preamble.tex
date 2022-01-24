@@ -1,0 +1,217 @@
+\def\ctxt{\text{c}} %connection subscript (text)
+\def\stxt{{\text{s}}} %string subscript (text)
+\def\ptxt{\text{p}} %plate subscript (text)
+\def\mtxt{\text{m}} %mass subscript (text)
+\def\itxt{\text{i}} %point of 'interest' subscript (text)
+\def\Btxt{\text{B}} %bow subscript (text)
+\def\etxt{\text{e}} %excitation subscript (text)
+\def\rtxt{\text{r}} %lip reed subscript (text)
+\def\ttxt{\text{t}} %tube subscript (text)
+
+
+\def\sgn{\text{sgn}}
+\def\sm{\text{sm}} %string-mass interaction tromba
+\def\mp{\text{mp}} %mass-plate interaction tromba
+
+\def\MoneD{{\mathcal{M}^n}}
+\def\MtwoD{{\mathcal{M}_2^n}}
+
+\def\Nfrac{\mathcal{N}}
+\def\flip{\leftarrow}
+\def\Ucal{\mathbfcal{U}}
+
+% states
+\def\uln{u_l^n}
+\def\wln{w_l^n}
+\def\wmn{w_m^n}
+\def\un{u^n}
+\def\ulmn{u_{l,m}^n}
+\def\ulm{u_{l,m}}
+\def\uqn{u_q^n}
+\def\qlmn{q_{l,m}^n}
+
+\def\wlmn{w_{l,m}^n}
+\def\zlmn{z_{l,m}^n}
+\def\ubr{u_\text{br}}
+\def\zbr{z_\text{br}}
+
+\def\qln{q_l^n}
+\def\lv{{l_v}}
+\def\lw{{l_w}}
+\def\vlvn{v_\lv^n}
+\def\ulcn{u_{l_\ctxt}^n}
+\def\wlwn{w_\lw^n}
+\def\wmcn{w_{m_\ctxt}^n}
+
+\def\wmn{w_m^n}
+
+\def\Psiln{\Psi_l^n}
+\def\Psinp{\Psi_l^{n+1}}
+\def\Psinm{\Psi_l^{n-1}}
+\def\Psilp{\Psi_{l+1}^n}
+\def\Psilm{\Psi_{l-1}^n}
+
+% bold symbols (state vectors and matrices)
+\def\u{\mathbf{u}}
+\def\w{\mathbf{w}}
+\def\ww{\boldsymbol{w}}
+\def\q{\mathbf{q}}
+\def\v{\mathbf{v}}
+\def\vv{\boldsymbol{v}}
+\def\z{\mathbf{z}}
+\def\Z{\mathbf{Z}}
+\def\I{\mathbf{I}}
+\def\A{\mathbf{A}}
+\def\B{\mathbf{B}}
+\def\C{\mathbf{C}}
+\def\Q{\mathbf{Q}}
+\def\U{\mathbf{U}}
+\def\J{\mathbf{J}}
+\def\i{\mathbf{i}}
+\def\j{\mathbf{j}}
+\def\BB{\mathbfcal{B}^n}
+
+
+% interpolators
+\def\Iu{I_{l, u}(x_\ctxt)}
+\def\Iw{I_{m, w}(\chi_\ctxt)}
+\def\Ju{J_{l, u}(x_\ctxt)}
+\def\Jw{J_{m, w}(\chi_\ctxt)}
+\def\Iq{I_q(\chi_\ctxt)}
+\def\Ilm{I_{l,m}(x_\ctxt)}
+
+\def\uStack{\boldsymbol{u}}
+\def\qq{\boldsymbol{q}}
+
+% mathfraks
+\def\H{\mathfrak{H}}
+\def\h{\mathfrak{h}}
+\def\t{\mathfrak{t}}
+\def\b{\mathfrak{b}}
+\def\p{\mathfrak{p}}
+% continuous operators
+\def\ptt{\partial_t^2} 
+\def\pxx{\partial_x^2}
+\def\pxxx{\partial_x^3}
+\def\pxxxx{\partial_x^4}
+\def\pcc{\partial_{\chi}^2}
+\def\pcccc{\partial_{\chi}^4}
+
+\def\pyy{\partial_y^2}
+
+\def\pt{\partial_t} 
+\def\px{\partial_x} 
+\def\py{\partial_y} 
+
+% discrete operators
+\def\dtt{\delta_{tt}} 
+\def\dxx{\delta_{xx}}
+\def\dxxx{\delta_{xxx}}
+\def\dxxxx{\delta_{xxxx}}
+\def\dcc{\delta_{\chi\chi}}
+\def\dcccc{\delta_{\chi\chi\chi\chi}}
+
+\def\dtd{\delta_{t\cdot}} 
+\def\dtp{\delta_{t+}} 
+\def\dtm{\delta_{t-}} 
+
+\def\dxd{\delta_{x\cdot}} 
+\def\dxp{\delta_{x+}} 
+\def\dxm{\delta_{x-}} 
+\def\dyd{\delta_{y\cdot}} 
+\def\dyp{\delta_{y+}} 
+\def\dym{\delta_{y-}} 
+
+\def\mtt{\mu_{tt}} 
+\def\mtd{\mu_{t\cdot}} 
+\def\mtp{\mu_{t+}} 
+\def\mtm{\mu_{t-}} 
+
+\def\mxx{\mu_{xx}} 
+\def\mxd{\mu_{x\cdot}} 
+\def\mxp{\mu_{x+}} 
+\def\mxm{\mu_{x-}} 
+
+\def\dDelta{\delta_{\Delta}}
+% \def\dDbox{\delta_{\Delta\boxplus}}
+\def\dyy{\delta_{yy}}
+
+% matrix operators
+\def\Dxx{\mathbf{D}_{xx}}
+\def\Dyy{\mathbf{D}_{yy}}
+\def\DDxx{\mathbfcal{D}_{xx}^n}
+\def\DDyy{\mathbfcal{D}_{yy}^n}
+\def\Dxxxx{\mathbf{D}_{xxxx}}
+\def\DDxxxx{\mathbfcal{D}_{xxxx}^n}
+
+\def\DDeltamat{\mathbf{D}_\Delta}
+\def\DDeltaDelta{\mathbf{D}_{\Delta\Delta}}
+\def\DDDelta{\mathbfcal{D}_{\Delta}^n}
+\def\DDDeltaDelta{\mathbfcal{D}_{\Delta\Delta}^n}
+
+\def\Mv{M_v^n}
+\def\Mw{M_w^n}
+
+% often-used variables
+\def\sz{\sigma_{0}}
+\def\so{\sigma_{1}}
+\def\vrel{v_\text{rel}}
+\def\Sbar{\bar{S}}
+\def\Sm{S_{l-1/2}}
+\def\Sp{S_{l+1/2}}
+
+\def\szX[#1]{\sigma_{0,{#1}}}
+\def\soX[#1]{\sigma_{1,{#1}}}
+
+\def\fs{f_\text{s}}
+\def\el{\epsilon_\text{l}}
+\def\er{\epsilon_\text{r}}
+% mathcals
+\def\D{\mathcal{D}}
+\def\L{\mathcal{L}}
+\def\OO{\mathcal{O}}
+\def\S{\mathcal{S}}
+
+% flooring ceiling
+\def\floor[#1]{\left\lfloor #1 \right\rfloor}
+\def\ceil[#1]{\left\lceil #1 \right\rceil}
+\def\ansatz{\ \overset{\mathcal{A}}{\Longrightarrow}\ }
+% other
+\def\qaq{\quad \text{and} \quad}
+\def\qwiq{\quad \text{with} \quad}
+\def\qwhq{\quad \text{where} \quad}
+
+\def\mystrut{\rule[-.2\baselineskip]{0pt}{\baselineskip}}
+
+\def\th{\textsuperscript{th} }
+\def\thOrder{\textsuperscript{th}-order }
+
+\def\boldPhi{\boldsymbol{\phi}}
+\def\boldPsi{\boldsymbol{\Psi}}
+\def\eig{\text{eig}}
+
+\def\Dxx{\mathbf{D}_{xx}}
+\def\alf{'}
+\def\DxxA{\Dxx\alf}
+\def\DyyA{\Dyy\alf}
+\def\DxxxxA{\Dxxxx\alf}
+\def\DDeltamatA{\DDeltamat\alf}
+\def\DDeltaDeltaA{\DDeltaDelta\alf}
+\def\Aterm{\mathcal{I}^n}
+
+
+\def\AA{\mathbfcal{A}^n}
+\def\BB{\mathbfcal{B}^n}
+\def\CC{\mathbfcal{C}^n}
+
+\DeclareMathAlphabet{\mathcal}{OMS}{ntxsy}{m}{n}   % or txsy
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n} % for paper A
+
+% \makeatletter
+% \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+%   \hskip -\arraycolsep
+%   \let\@ifnextchar\new@ifnextchar
+%   \array{#1}}
+% \makeatother
+% \usepackage{tabstackengine}
+% \stackMath

@@ -1,0 +1,363 @@
+% -----------------------------------------------
+% Template for SMC 2022
+% based on SMC 2022 template
+% -----------------------------------------------
+\include{preamble.tex}
+
+\documentclass{article}
+\usepackage{smc}
+\usepackage{times}
+\usepackage{ifpdf}
+\usepackage[english]{babel}
+\usepackage{cite}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Some useful packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% See related documentation %%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath} % popular packages from Am. Math. Soc. Please use the 
+\usepackage{amssymb} % related math environments (split, subequation, cases,
+\usepackage{amsfonts}% multline, etc.)
+%\usepackage{bm}      % Bold Math package, defines the command \bf{}
+%\usepackage{paralist}% extended list environments
+%%subfig.sty is the modern replacement for subfigure.sty. However, subfig.sty 
+%%requires and automatically loads caption.sty which overrides class handling 
+%%of captions. To prevent this problem, preload caption.sty with caption=false 
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+
+
+%user defined variables
+\def\papertitle{Modular Physical Models in a Real-Time Interactive Application}
+\def\firstauthor{Silvin Willemsen}
+\def\secondauthor{Titas Lasickas}
+\def\thirdauthor{Stefania Serafin}
+
+% adds the automatic
+% Saves a lot of output space in PDF... after conversion with the distiller
+% Delete if you cannot get PS fonts working on your system.
+
+% pdf-tex settings: detect automatically if run by latex or pdflatex
+\newif\ifpdf
+\ifx\pdfoutput\relax
+\else
+   \ifcase\pdfoutput
+      \pdffalse
+   \else
+      \pdftrue
+\fi
+
+\ifpdf % compiling with pdflatex
+  \usepackage[pdftex,
+    pdftitle={\papertitle},
+    pdfauthor={\firstauthor, \secondauthor, \thirdauthor},
+    bookmarksnumbered, % use section numbers with bookmarks
+    pdfstartview=XYZ % start with zoom=100% instead of full screen; 
+                     % especially useful if working with a big screen :-)
+   ]{hyperref}
+  %\pdfcompresslevel=9
+
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are and their extensions so 
+  %you won't have to specify these with every instance of \includegraphics
+  \graphicspath{{./figures/}}
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+  \usepackage[figure,table]{hypcap}
+
+\else % compiling with latex
+  \usepackage[dvips,
+    bookmarksnumbered, % use section numbers with bookmarks
+    pdfstartview=XYZ % start with zoom=100% instead of full screen
+  ]{hyperref}  % hyperrefs are active in the pdf file after conversion
+
+  \usepackage[dvips]{epsfig,graphicx}
+  % declare the path(s) where your graphic files are and their extensions so 
+  %you won't have to specify these with every instance of \includegraphics
+  \graphicspath{{./figures/}}
+  \DeclareGraphicsExtensions{.eps}
+
+  \usepackage[figure,table]{hypcap}
+\fi
+
+%setup the hyperref package - make the links black without a surrounding frame
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+    urlcolor=black
+}
+
+
+% Title.
+% ------
+\title{\papertitle}
+
+% Authors
+% Please note that submissions are NOT anonymous, therefore 
+% authors' names have to be VISIBLE in your manuscript. 
+%
+% Single address
+% To use with only one author or several with the same address
+% ---------------
+%\oneauthor
+%   {\firstauthor} {Affiliation1 \\ %
+%     {\tt \href{mailto:author1@smcnetwork.org}{author1@smcnetwork.org}}}
+
+%Two addresses
+%--------------
+% \twoauthors
+%   {\firstauthor} {Affiliation1 \\ %
+%     {\tt \href{mailto:author1@smcnetwork.org}{author1@smcnetwork.org}}}
+%   {\secondauthor} {Affiliation2 \\ %
+%     {\tt \href{mailto:author2@smcnetwork.org}{author2@smcnetwork.org}}}
+
+% Three addresses
+% --------------
+ \oneauthor
+   {\firstauthor, \secondauthor, and \thirdauthor} {Multisensory Experience Lab, CREATE,\\
+   Aalborg University Copenhagen, Denmark \\ %
+     {\tt \href{mailto:sil@create.aau.dk}{sil@create.aau.dk}}}
+
+
+% ***************************************** the document starts here ***************
+\begin{document}
+%
+\capstartfalse
+\maketitle
+\capstarttrue
+%
+\begin{abstract}
+
+\end{abstract}
+%
+
+\section{Introduction}\label{sec:introduction}
+
+Much work has been done on modularity in physical modelling sound synthesis. 
+Cadoz \cite{Cadoz1983}
+
+Mosaic \cite{Morrison1993} modal synthesis
+
+Bilbao 
+
+Due to a recent increase in computational power, finite-difference time-domain (FDTD) methods have gained popularity in real-time applications 
+
+A real-time modular environment using strings and lumped objects is presented in \cite{Bilbao2019}. 
+
+The current work presents stiff strings as well as 2D stiff membranes, as well as a user interface
+
+Furthermore, a 
+
+
+Consumer hardware 
+
+
+Resonator exciter \cite{Borin1989}
+
+linear resonator, nonlinear exciter
+
+
+This paper presents an application where the user can
+
+In an attempt to collect various implementations of physical models based on FDTD methods. 
+
+This work is part of a larger project, which will see this work in virtual reality (VR) in a ``build your own instrument'' environment, where it will be used as a sound engine.
+
+\section{Models}
+This section describes the continuous-time equations of the systems used in the application. The transverse displacement of a system can be described by state variable $q(\boldsymbol{x}, t)$ with time $t\geq 0$ and spatial coordinate $\boldsymbol{x}\in \mathcal{D}$. Here, the dimensions and definition of domain $\mathcal{D}$ depend on the system at hand. The dynamics of a system can then be written using the following general form:
+\begin{equation}\label{eq:generalForm}
+    \mathcal{L}q = 0,
+\end{equation}
+where linear (partial) differential operator $\mathcal{L}$ describes the dynamics of a model in isolation.
+
+The output of any model can be obtained by listening to $q(\boldsymbol{x}_\text{o}, t)$ for an output location $\boldsymbol{x}_\text{o} \in \mathcal{D}$. 
+
+\subsection{Stiff String}
+With reference to Eq. \eqref{eq:generalForm}, consider a (damped) stiff string of length $L$ (in m), its transverse displacement described by state variable $q = u(\chi, t)$ (in m). Here spatial coordinate $\chi$ is defined over domain $\mathcal{D} = \mathcal{D}_\stxt = [0, L]$. Furthermore $\mathcal{L} = \mathcal{L}_\stxt$ and is defined as \cite{Bensa2003}
+\begin{equation}
+    \mathcal{L}_\stxt = \rho_\stxt A\ptt - T_\stxt \pcc + E_\stxt I \pcccc + 2\szX[\stxt]\rho_\stxt A\pt - 2 \soX[\stxt]\rho_\stxt A\pt\pcc,
+\end{equation}
+where $\pt$ and $\partial_\chi$ denote partial differentiation with respect to time and space respectively. The model is parameterised by material density $\rho_\stxt$ (in kg$\cdot$m$^{-3}$), cross-sectional area $A = \pi r^2$ (in m$^2$), radius $r$ (in m), tension $T$ (in N), Young's modulus $E_\stxt$ (in Pa), area moment of inertia $I = \pi r^4/4$ and loss coefficients $\szX[\stxt]$ (in s$^{-1}$) and $\soX[\stxt]$ (in m$^2$/s). If $T=0$, the model reduces to a bar. Note that a circular cross-section is assumed here. 
+
+The boundary conditions are chosen to be simply supported as
+\begin{equation}
+    u = \pcc u = 0, \quad \text{for}, \quad \chi = 0, L.
+\end{equation}
+
+\subsection{Stiff Membrane}
+Consider a rectangular stiff membrane with side lengths $L_x$ and $L_y$ (both in m). With reference to Eq. \eqref{eq:generalForm} its transverse displacement can be described by $q = w(x, y, t)$ (in m), which is defined for domain
+$\mathcal{D} = \mathcal{D}_\ptxt = [0, L_x] \times [0, L_y]$, and $\mathcal{L} = \mathcal{L}_\ptxt$ is defined as \cite{Fletcher1998}
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}_\ptxt = &\ \rho_\ptxt H\ptt - T_\ptxt \Delta + D \Delta\Delta+ 2\szX[\ptxt]\rho_\ptxt H\pt \\
+        & - 2 \soX[\ptxt]\rho_\ptxt H\pt\Delta.
+    \end{aligned}
+\end{equation}
+Parameters are: material density $\rho_\ptxt$ (in kg$\cdot$m$^{-3}$), thickness $H$ (in m), tension per unit length $T_\ptxt$ (in N/m), stiffness coefficent $D = E_\ptxt H^3 / 12 (1-\nu^2)$ (in kg $\cdot$ m$^2\cdot$s$^{-2}$), Young's modulus $E_\ptxt$ (in Pa), dimensionless Poisson's ratio $\nu$, and loss coefficients $\szX[\ptxt]$ (in s$^{-1}$) and $\soX[\ptxt]$ (in m$^2$/s).
+If $T_\ptxt = 0$, the model reduces to a thin plate, and if $D=0$ it reduces to the 2D wave equation, which can be used to model a membrane (without stiffness).
+
+Boundary conditions are chosen to be clamped, such that
+\begin{equation}
+        w = {\bf n} \cdot \nabla w = 0,
+\end{equation}
+where $\nabla$ denotes `the gradient of', and ${\bf n}$ is a normal to the plate area at the boundary.
+
+\subsection{Connections}
+The general form in Eq. \eqref{eq:generalForm} can be extended to include forces due to connections between systems according to
+\begin{equation}\label{eq:generalFormConnections}
+    \mathcal{L}q = \sum_i \delta(\boldsymbol{x} - \boldsymbol{x}_{\ctxt, i})f_{\ctxt, i},
+\end{equation}
+where $f_{\ctxt, i}$ is the connection force of the $i$\textsuperscript{th} connection (in N) and the spatial Dirac delta function $\delta(\boldsymbol{x}-\boldsymbol{x}_{\ctxt, i})$ locates the effect of the connection to a single location $\boldsymbol{x}_{\ctxt, i}\in \mathcal{D}$
+ 
+In this work, three possible connections are considered: rigid, the linear spring and the nonlinear spring. 
+
+First, the rigid connection assumes that the connected systems have an identical displacement at their respective connection locations. Using a string-membrane connection for illustration, the following indicates a rigid connection: 
+\begin{equation}
+    u(\chi_\ctxt, t) = w(x_\ctxt, y_\ctxt, t)
+\end{equation}
+where $\chi_\ctxt$ and $(x_\ctxt, y_\ctxt)$ are the connection locations on the string and membrane respectively. 
+
+Alternatively, as done in \cite{theBible, Bilbao2009Modular}, one can use a spring to connect two systems. A connection force due to a nonlinear damped spring is
+\begin{equation}\label{eq:nonlinearSpring}
+    f_\ctxt = K_1\eta + K_3\eta^3 + R\pt \eta,
+\end{equation}
+where $\eta = \eta(t)$ is the relative displacement of the two systems at their respective connection locations (in m), $K_1$ is a linear spring coefficient (in N/m), $K_3$ is a nonlinear spring coefficient (in N$\cdot$m$^{-3}$) and $R$ is a damping coefficient (in s$^{-1}$). If $K_3 = 0$, Eq. \eqref{eq:nonlinearSpring} reduces to a linear spring. 
+
+Section \ref{sec:discConnections} will elaborate on how to calculate the connection forces in all cases.
+
+\subsection{Excitations}
+In this work, as excitations will only be applied to 1D systems, the state variable of the stiff string, i.e., $u(\chi, t)$, will be used for the presentation of the various excitations. The general form in Eq. \eqref{eq:generalFormConnections}
+can thus be extended -- for the string -- to 
+\begin{equation}\label{eq:generalFormString}
+    \mathcal{L}_\stxt u = \sum_i \delta(\chi - \chi_{\ctxt, i})f_{\ctxt, i} + e_\etxt f_\etxt,
+\end{equation}
+where $e_\etxt = e_\etxt(\chi)$ is an excitation distribution and $f_\etxt = f_\etxt(t)$ is the externally supplied excitation force (in N).
+
+\subsubsection{The Bow}
+As done in previous work, see e.g. \cite{Willemsen2019}, one can introduce the bow as an interesting nonlinear interaction with the string. With reference to Eq. \eqref{eq:generalFormString}, the excitation force can be defined as \cite{theBible}
+\begin{equation}
+    f_\text{e} = f_\Btxt\sqrt{2a}\vrel e^{-a\vrel^2+1/2} 
+\end{equation}
+with externally supplied bow force $f_\Btxt = f_\Btxt(t)$ (in N), dimensionless free parameter $a$ and 
+\begin{equation}
+    \vrel = \pt u(\chi_\Btxt, t) - v_\Btxt.
+\end{equation}
+is the relative velocity (in m/s) between the string at externally supplied bowing location $\chi_\Btxt = \chi_\Btxt(t)$ (in m) and the externally supplied bow velocity $v_\Btxt = v_\Btxt(t)$ (in m/s).
+
+Furthermore, the excitation distribution is set to be a single point along the string:
+\begin{equation}
+    e_\text{e} = \delta(\chi - \chi_\Btxt).
+\end{equation}
+
+\subsubsection{Hammer}
+Another way of exciting a system is to use a hammer, which can be modelled as a simple mass-spring system with state variable $v(t)$. The interaction between the hammer and the string is then modelled as a collision, using the following collision potential \cite{Hertz1881}:
+\begin{equation}\label{eq:potential}
+    \phi(\eta_\etxt) = \frac{K_\etxt}{\alpha_\etxt+1}[\eta_\etxt]_+^{\alpha_\etxt+1},
+\end{equation}
+with collision stiffness $K_\etxt \geq 0$ (in N/m$^{\alpha_\etxt}$) and nonlinear collision coefficient $\alpha_\etxt \geq 1$. Furthermore, $\eta_\etxt = \eta_\etxt(t) = \theta\left(u(\chi_\etxt, t) - v(t)\right)$ is the relative displacement between the string at collision location $\chi_\etxt$ (in m) and the hammer (in m), and $[\cdot] = 0.5 (\cdot + |\cdot|)$ describes the `positive part of', making the collision one-sided. Furthermore, using $\tau = 1$ if the user triggers the hammer interaction, and $\tau = 0$ if not, $\theta = \tau$ if the string should be excited from above, and $\theta = -\tau$ if it should be excited from below.
+
+Using a change of variables based on energy quadratisation presented in \cite{Ducceschi2021}, one can rewrite the collision potential as
+\begin{equation}
+    f_\text{e} = -\theta\psi \psi'
+\end{equation}
+where $\psi = \psi(\eta) = \sqrt{2\phi}$, and using dots to denote a temporal derivative, $\psi' = \dot \psi / \dot \eta$. This change of variables ultimately allows for an explicit implementation of the nonlinear collision. 
+
+Using the above, the dynamics of the hammer, including the collision with the string, can be described by the following PDE
+\begin{equation}
+    M\ptt v = -K v + \theta \psi\psi' + f_\text{off}
+\end{equation}
+with mass $M$ (in kg), spring constant $K$ (in N/m) and $f_\text{off} = f_\text{off}(t) = K v_\text{off}$ is an external force (in N) used to counteract the spring force, where $v_\text{off} = v_\text{off}(t)$ is an externally supplied offset (in m). This force should keep the mass away from the equilibrium (and thus the system it excites) when controlling the application without wanting to excite the system. If the hammer excitation is triggered, $v_\text{off}$ will be set to $0$ and the spring force will pull the hammer towards the system, colliding with it in the process. After the collision, $v_\text{off}$ will be set to be user-controlled again to avoid continuous collision between the hammer and the string. 
+
+Finally, with reference to Eq. \eqref{eq:generalFormString}, the excitation distribution is set to be a raised cosine with centre location $\chi_\etxt$ and excitation width $e_\text{w}$ (in m):
+\begin{equation}
+    e_\etxt(\chi) = \begin{cases}
+        \frac{1 - \cos\left(\frac{2\pi (\chi - \chi_\etxt)}{e_\text{w}} + \pi\right)}{2}&\!\!\!\!\text{if}\ \chi_\etxt - \frac{e_\text{w}}{2}\leq \chi \leq \chi_\etxt + \frac{e_\text{w}}{2}\\
+        0,& \!\!\!\!\text{otherwise.}
+        \end{cases}
+\end{equation}
+% \begin{equation}\label{eq:raisedCosCont}
+%     e_\text{rc}(\chi) = 
+%     \begin{cases}
+%         \frac{1}{2}\left(1 - \cos\left(\frac{2\pi (\chi - \chi_\etxt - e_\text{w})}{e_\text{w}}\right)\right), & \text{if } \chi_\etxt - e_\text{w}/2\leq \chi \leq \chi_\etxt + e_\text{w}/2,\\
+%         0, & \text{otherwise},
+%     \end{cases}
+% \end{equation}
+\subsubsection{Pluck}
+The pluck is modelled in the same way as the hammer, the only difference being
+
+\section{Discrete Time}
+
+$q(\boldsymbol{x},t)\approxeq q_{\boldsymbol{l}}^n$
+\subsection{Connections}\label{sec:discConnections}
+\begin{equation}
+    \ell q_{\boldsymbol{l}}^n = \sum_i J_{\boldsymbol{l},0}(\boldsymbol{x}_{\ctxt,i})f_{\ctxt, i}
+\end{equation}
+
+where 
+\begin{equation}
+    J_{\boldsymbol{l},0}(\boldsymbol{x}_{\text{c}, i}) = \begin{cases}
+    \frac{1}{h^d}&\quad \text{if}\ \boldsymbol{x}_{\ctxt, i} = \floor[\boldsymbol{l}/h]\\
+    0, &\quad\text{otherwise}
+    \end{cases}
+\end{equation}
+where $d$ is the number of spatial dimensions the system is defined over ($d = 1$ for the string, $d=2$ for the membrane). 
+
+
+
+\subsection{Excitation}
+For the bow, a cubic interpolator $J_3$ is introduced
+\begin{equation}\label{eq:cubicJ}
+    J_{l,3}(\chi_\itxt) = \frac{1}{h}\begin{cases}
+        -\alpha_\itxt (\alpha_\itxt-1)(\alpha_\itxt-2)/6, & l = l_\itxt-1,\\
+        (\alpha_\itxt-1)(\alpha_\itxt+1)(\alpha_\itxt-2)/2,  & l = l_\itxt,\\
+        -\alpha_\itxt (\alpha_\itxt+1)(\alpha_\itxt-2)/2, & l = l_\itxt + 1,\\
+        \alpha_\itxt (\alpha_\itxt+1)(\alpha_\itxt-1)/6, & l = l_\itxt + 2,\\
+        0, & \text{otherwise.}
+    \end{cases}
+\end{equation}
+where $l_\itxt = \floor[\chi_\itxt / h]$
+\section{Real-Time Application}
+Only 1D models can be excited
+
+\subsection{Functionality}
+Buttons and such
+\subsubsection{Modules}
+Stiff string
+
+Bar
+
+Membrane
+
+Thin Plate
+
+Stiff Membrane
+
+\subsubsection{Outputs}
+\subsubsection{Connections}
+Although experiments with overlapping connections have been done, it has been decided to exclude these from the application. Following \cite{Bilbao2009Modular}, although any number of overlapping connections can be explicitly calculated, one needs to do a matrix inverse every sample. Therefore, it was decided to exclude overlapping connections from the application. 
+
+
+\subsubsection{Groups}
+
+\subsubsection{Presets}
+
+\section{Discussion}
+To the best of the authors' knowledge, the way of real-time interactive excitation used for the hammer and the pluck has not been done before. 
+
+\section{Conclusion}
+
+Applying excitations to 2D systems.
+
+Port to Virtual Reality
+
+Adding inputs so that the application can be used as an effect. 
+
+\begin{acknowledgments}
+This work has been funded in part by the European Art-Science-Technology Network for Digital Creativity (EASTN-DC), project number 883023.
+\end{acknowledgments} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%bibliography here
+\bibliography{smc2022bib}
+
+\end{document}
