@@ -171,7 +171,7 @@ This section describes the continuous-time equations of the systems used in the 
 \begin{equation}\label{eq:generalForm}
     \mathcal{L}q = 0,
 \end{equation}
-where linear (partial) differential operator $\mathcal{L}$ describes the dynamics of a model in isolation.
+where linear partial differential operator $\mathcal{L}$ describes the dynamics of a model in isolation.
 
 % The output of any model can be obtained by listening to $q(\boldsymbol{x}_\text{o}, t)$ for an output location $\boldsymbol{x}_\text{o} \in \mathcal{D}$. 
 
@@ -219,7 +219,7 @@ Model $q_{r_c}$ will be placed `below' $q_{s_c}$ such that the connection force 
 \begin{equation}\label{eq:generalFormConnections}
     \!\!\!\mathcal{L}_mq_m =\!\sum_{\substack{c\in \mathcal{C}\vspace{0.1em}\\ r_c = m}}\!\! \delta(\boldsymbol{x}_m - \boldsymbol{x}_{r, c}) f_c-\!\! \sum_{\substack{c\in \mathcal{C}\vspace{0.1em}\\ s_c = m}}\!\! \delta(\boldsymbol{x}_m - \boldsymbol{x}_{s,c}) f_c,
 \end{equation}
-where $f_c$ is the force (in N) of the $c$\textsuperscript{th} connection.
+where $f_c = f_c(t)$ is the force (in N) of the $c$\textsuperscript{th} connection.
 
 To illustrate, consider two models ($M=2$), a string and a membrane, such that $q_1 = u(\chi ,t)$ and $q_2 = w(x,y,t)$, and a single connection between them ($C = 1$). Placing the string below the membrane, we get that $r_1 = 1$ and $s_1 = 2$, i.e., the `below' model of connection $1$ has index $1$, the `above' model of connection $1$ has index $2$. Filling in the partial differential operators for the string and membrane found in Eqs. \eqref{eq:stiffString} and \eqref{eq:stiffMembrane} respectively, Eq. \eqref{eq:generalFormConnections} becomes for the string and the membrane respectively
 \begin{subequations}
@@ -230,35 +230,30 @@ To illustrate, consider two models ($M=2$), a string and a membrane, such that $
 \end{subequations}
 % where $\chi_\ctxt$ and $(x_\ctxt, y_\ctxt)$ are the respective connection locations along the string, and on the membrane. The connection force is denoted by $f_\ctxt$ (in N) and has an equal and opposite effect on the string and membrane respectively. It is important to take note of the relative location of the two connected systems, i.e., whether a system is placed `above' or `below' the other as this will determine the signs of the connection forces in Eq. \eqref{eq:contStringMembraneConn}. In this case, the string is placed above the membrane. 
 
-In this work, three possible connections are considered: rigid, the linear spring and the nonlinear spring. First, the rigid connection assumes that the connected systems have an identical displacement at their respective connection locations. Using the string-membrane example, the following indicates a rigid connection \cite{theBible}: 
-% \begin{equation}
-%     u(\chi_\ctxt, t) = w(x_\ctxt, y_\ctxt, t).
-% \end{equation} 
+In this work, three possible connections are considered: rigid, the linear spring and the nonlinear spring. First, the rigid connection assumes that the connected systems have an identical displacement at their respective connection locations. Applied to Eq. \eqref{eq:contStringMembraneConn}, the following indicates a rigid connection \cite{theBible}: 
 \begin{equation}
-    q_1(\boldsymbol{x}_1, t) = q_2(\boldsymbol{x}_2, t)
-\end{equation}
+    u(\chi_\ctxt, t) = w(x_\ctxt, y_\ctxt, t).
+\end{equation} 
 Alternatively, as done in \cite{theBible, Bilbao2009Modular}, one can use a spring to connect two systems. A connection force due to a nonlinear damped spring is
 \begin{equation}\label{eq:nonlinearSpring}
     f_\ctxt = K_1\eta + K_3\eta^3 + R\pt \eta,
 \end{equation}
-where, $K_1$ is a linear spring coefficient (in N/m), $K_3$ is a nonlinear spring coefficient (in N/m$^3$), and $R$ is a damping coefficient (in s$^{-1}$). If $K_3 = 0$, Eq. \eqref{eq:nonlinearSpring} reduces to a linear spring. Furthermore, $\eta = \eta(t) = u(\chi_\ctxt t) - w(x_\ctxt, y_\ctxt, t)$ is the relative displacement of the two systems at their respective connection locations (in m).\footnote{If the string would be placed below the membrane, $\eta(t) = w(x_\ctxt, y_\ctxt, t) - u(\chi_\ctxt t)$.} Section \ref{sec:discConnections} will elaborate on how to calculate the connection forces in all cases. \SWcomment[check]
+where, $K_1$ is a linear spring coefficient (in N/m), $K_3$ is a nonlinear spring coefficient (in N/m$^3$), and $R$ is a damping coefficient (in s$^{-1}$). If $K_3 = 0$, Eq. \eqref{eq:nonlinearSpring} reduces to a linear spring. Furthermore, $\eta = \eta(t) = w(x_\ctxt, y_\ctxt, t) - u(\chi_\ctxt t)$ is the relative displacement of the two systems at their respective connection locations (in m).\footnote{If the string would be placed above the membrane, $\eta(t) = u(\chi_\ctxt t) - w(x_\ctxt, y_\ctxt, t)$.} Section \ref{sec:discConnections} will elaborate on how to calculate the connection forces in all cases. \SWcomment[check]
 
-The general form in Eq. \eqref{eq:generalForm} can be extended to include forces due to connections between systems according to
-
-
-\begin{equation}
-\begin{aligned}
-    \mathfrak{C} = \Big\{\big(1, 2, 0.25, 0.25\big), \\
-    \big(1, 2, 0.5, 0.75\big)\Big\}
-\end{aligned}
-\end{equation}
-% \begin{equation}\label{eq:generalFormConnections}
+% The general form in Eq. \eqref{eq:generalForm} can be extended to include forces due to connections between systems according to
+% \begin{equation}
 % \begin{aligned}
-%     \mathcal{L}^{(1)}q^{(1)} &= \sum_i \delta(\boldsymbol{x}^{(1)} - \boldsymbol{x}^{(1)}_{\ctxt, i})f_{\ctxt, i},\\
-%     \mathcal{L}^{(2)}q^{(2)}&= -\sum_i \delta(\boldsymbol{x}^{(2)} - \boldsymbol{x}^{(2)}_{\ctxt, i})f_{\ctxt, i},
+%     \mathfrak{C} = \Big\{\big(1, 2, 0.25, 0.25\big), \\
+%     \big(1, 2, 0.5, 0.75\big)\Big\}
 % \end{aligned}
 % \end{equation}
-where $f_{\ctxt, i}$ is the connection force (in N) of the $i$\textsuperscript{th} connection of system $q$ and the spatial Dirac delta function $\delta(\boldsymbol{x}-\boldsymbol{x}_{\ctxt, i})$ locates the effect of the connection to a single location $\boldsymbol{x}_{\ctxt, i}\in \mathcal{D}$.
+% % \begin{equation}\label{eq:generalFormConnections}
+% % \begin{aligned}
+% %     \mathcal{L}^{(1)}q^{(1)} &= \sum_i \delta(\boldsymbol{x}^{(1)} - \boldsymbol{x}^{(1)}_{\ctxt, i})f_{\ctxt, i},\\
+% %     \mathcal{L}^{(2)}q^{(2)}&= -\sum_i \delta(\boldsymbol{x}^{(2)} - \boldsymbol{x}^{(2)}_{\ctxt, i})f_{\ctxt, i},
+% % \end{aligned}
+% % \end{equation}
+% where $f_{\ctxt, i}$ is the connection force (in N) of the $i$\textsuperscript{th} connection of system $q$ and the spatial Dirac delta function $\delta(\boldsymbol{x}-\boldsymbol{x}_{\ctxt, i})$ locates the effect of the connection to a single location $\boldsymbol{x}_{\ctxt, i}\in \mathcal{D}$.
   
   
 \subsection{Excitations}
@@ -336,23 +331,36 @@ In the case of the stiff membrane, the spatial coordinate is discretised onto  a
 Using these definitions, the general state variable $q(\boldsymbol{x}, t)$ can be approximated to grid function $q_{\boldsymbol{l}}^n$, where for the stiff string $\boldsymbol{l} = p$ yielding grid function $u_p^n$ and for the stiff membrane $\boldsymbol{l} = (l, m)$ yielding grid function $z_{(l,m)}^n$.
 
 \subsection{FDTD schemes}
+The general form in Eq. \eqref{eq:generalForm} can be discretised to the following FDTD scheme
+\begin{equation}\label{eq:generalFormDisc}
+    \ell q_{\boldsymbol{l}}^n = 0
+\end{equation}
+where $\ell$ is the discretised version of linear partial differential operator $\mathcal{L}$. The discrete-time definitions of Eqs. \eqref{eq:stiffString} and \eqref{eq:stiffMembrane} will not be given here for brevity, but can be found in the literature (e.g. \cite{theBible}, \cite{WillemsenThesis}). Expanding Eq. \eqref{eq:generalFormDisc} for definition of $\ell$ yields an update equation of the form
+\begin{equation}
+    a q_{\boldsymbol{l}}^{n+1} = b q_{\boldsymbol{l}}^n + c q_{\boldsymbol{l}}^{n-1}
+\end{equation}
+where $a$, $b$ and $c$ depend on the system at hand. 
 
 
 \subsection{Connections}\label{sec:discConnections}
-\begin{equation}
-    \ell q_{\boldsymbol{l}}^n = \sum_i J_{\boldsymbol{l},0}(\boldsymbol{x}_{\ctxt,i})f_{\ctxt, i}
+The general form in Eq. \eqref{eq:generalFormConnections} can be discretised to
+\begin{equation}\label{eq:generalFormConnections}
+    \!\!\!\ell_mq_{m, \boldsymbol{l}}^n =\!\sum_{\substack{c\in \mathcal{C}\vspace{0.1em}\\ r_c = m}}\!\! J_{m, \boldsymbol{l}, 0}(\boldsymbol{x}_{r, c}) f_c^n-\!\! \sum_{\substack{c\in \mathcal{C}\vspace{0.1em}\\ s_c = m}}\!\! J_{m, \boldsymbol{l}, 0}(\boldsymbol{x}_{s, c}) f_c^n,
 \end{equation}
-
 where 
 \begin{equation}
-    J_{\boldsymbol{l},0}(\boldsymbol{x}_{\text{c}, i}) = \begin{cases}
-    \frac{1}{h^d}&\quad \text{if}\ \boldsymbol{x}_{\ctxt, i} = \floor[\boldsymbol{l}/h]\\
+    J_{m, \boldsymbol{l},0}(\boldsymbol{x}) = \begin{cases}
+    \frac{1}{h_m^d}&\quad \text{if}\ \boldsymbol{x} = \floor[\boldsymbol{l}/h_m]\\
     0, &\quad\text{otherwise}
     \end{cases}
 \end{equation}
-where $d$ is the number of spatial dimensions the system is defined over ($d = 1$ for the string, $d=2$ for the membrane). 
+is a spreading operator that localises the connection force of the $c$\textsuperscript{th} connection $f_c^n$ to location $\boldsymbol{x}$. Here, $d$ is the number of spatial dimensions the system is defined over ($d = 1$ for the string, $d = 2$ for the membrane). 
 
 For a rigid connection, the force can be solved for by 
+
+\begin{equation}
+    f_c^n = \frac{q_{r_c}^\star - q_{s_c}^\star}{\frac{k^2h_{r_c}^{d_{r_c}}}{a_{r_c}} + \frac{k^2}{a_{s_c}}}
+\end{equation}
 
 \subsection{Excitations}\label{sec:discExcitations}
 For the bow, a cubic interpolator $J_3$ is introduced
@@ -381,6 +389,8 @@ An extensive demo of the application, going through all of the functionality des
 
 \subsection{Model Interaction}
 scroll wheel is linked to $-0.2 \leq v_\Btxt \leq 0.2$ if the bowing excitation is chosen. If instead the hammer or pluck interaction are chosen, the scrollwheel is linked to the excitation width $h \leq e_\text{w} \leq 10 h$. . 
+
+The direction of the bowing is visualised with a moving gradient 
 \subsection{Control panel}
 If a button is clicked
 
@@ -426,12 +436,13 @@ If the hammer is triggered when the mass is further away from the string, the ex
 
 \begin{table}[]
     \centering
-    \begin{tabular}{c|c|c|c}
-        No connections & rigid & linear & nonlinear \\
-        6.2 & 
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline  & None & Rigid & Linear & Nonlinear \\\hline
+        No graphics & 3.8 & 8.3 & 13 & 13\\
+        Graphics & 12.7 & 28.4 & 42.3 & 43.1\\\hline
     \end{tabular}
-    \caption{Caption}
-    \label{tab:my_label}
+    \caption{CPU usage (in \%) of two identical strings ($N=118$) with all moving grid points connected in various ways.}
+    \label{tab:CPU}
 \end{table}
 
 \section{Discussion}
