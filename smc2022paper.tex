@@ -2,9 +2,9 @@
 % Template for SMC 2022
 % based on SMC 2022 template
 % -----------------------------------------------
-\include{preamble.tex}
 
 \documentclass{article}
+
 \usepackage{smc}
 \usepackage{times}
 \usepackage{ifpdf}
@@ -28,6 +28,7 @@
 %\usepackage[caption=false]{caption}
 %\usepackage[font=footnotesize]{subfig}
 
+\include{preamble}
 
 %user defined variables
 \def\papertitle{Modular Physical Models in a Real-Time Interactive Application}
@@ -176,7 +177,7 @@ where linear (partial) differential operator $\mathcal{L}$ describes the dynamic
 
 \subsection{Stiff String and Bar}
 With reference to Eq. \eqref{eq:generalForm}, consider a (damped) stiff string of length $L$ (in m), its transverse displacement described by state variable $q = u(\chi, t)$ (in m). Here spatial coordinate $\chi$ is defined over domain $\mathcal{D} = \mathcal{D}_\stxt = [0, L]$. Furthermore $\mathcal{L} = \mathcal{L}_\stxt$ and is defined as \cite{Bensa2003}
-\begin{equation}
+\begin{equation}\label{eq:stiffString}
     \mathcal{L}_\stxt = \rho_\stxt A\ptt - T_\stxt \pcc + E_\stxt I \pcccc + 2\szX[\stxt]\rho_\stxt A\pt - 2 \soX[\stxt]\rho_\stxt A\pt\pcc,
 \end{equation}
 where $\pt$ and $\partial_\chi$ denote partial differentiation with respect to time and space respectively. The model is parameterised by material density $\rho_\stxt$ (in kg/m$^3$), cross-sectional area $A = \pi r^2$ (in m$^2$), radius $r$ (in m), tension $T$ (in N), Young's modulus $E_\stxt$ (in Pa), area moment of inertia $I = \pi r^4/4$ and loss coefficients $\szX[\stxt]$ (in s$^{-1}$) and $\soX[\stxt]$ (in m$^2$/s). If $T=0$, the model reduces to a bar. Note that a circular cross-section is assumed here. 
@@ -189,7 +190,7 @@ The boundary conditions are chosen to be simply supported as
 \subsection{Thin Plate and (Stiff) Membrane}
 Consider a rectangular stiff membrane with side lengths $L_x$ and $L_y$ (both in m). With reference to Eq. \eqref{eq:generalForm} its transverse displacement can be described by $q = w(x, y, t)$ (in m), which is defined for domain
 $\mathcal{D} = \mathcal{D}_\ptxt = [0, L_x] \times [0, L_y]$, and $\mathcal{L} = \mathcal{L}_\ptxt$ is defined as \cite{Fletcher1998}
-\begin{equation}
+\begin{equation}\label{eq:stiffMembrane}
     \begin{aligned}
         \mathcal{L}_\ptxt = &\ \rho_\ptxt H\ptt - T_\ptxt \Delta + D \Delta\Delta+ 2\szX[\ptxt]\rho_\ptxt H\pt \\
         & - 2 \soX[\ptxt]\rho_\ptxt H\pt\Delta.
@@ -205,24 +206,28 @@ Boundary conditions are chosen to be clamped, such that
 where $\nabla$ denotes `the gradient of', and ${\bf n}$ is a normal to the plate area at the boundary.
 
 \subsection{Connections}
-One can add connections to the models presented above by extending the general form in Eq. \eqref{eq:generalForm}. Consider $M$ models $q_m$ indexed by $m \in \mathcal{M}$, where $\mathcal{M} = \{1, \hdots, M\}$. Following the notation in \cite{Sudholt2021}, a connection between model $r \in \mathcal{M}$ and $s\in \mathcal{M}$ at locations $\boldsymbol{x}_r \in \mathcal{D}_r$, and $\boldsymbol{x}_s \in \mathcal{D}_s$ respectively, can be described by the following 4-tuple $(r, s, \boldsymbol{x}_r, \boldsymbol{x}_s)$. Here, model $q_r$ is placed `below' model $q_s$, such that the connection force acts positively on the former and negatively on the latter.  The general form in Eq. \eqref{eq:generalForm} can then be extended to include connections according to
-\begin{equation}\label{eq:generalFormConnections}
-    \begin{aligned}
-        \mathcal{L}_mq_m = &\sum_{\substack{(r, s, \boldsymbol{x}_r, \boldsymbol{x}_s) \in \mathfrak{C} \vspace{0.2em}\\
-        r=m}} \delta(\boldsymbol{x}_m - \boldsymbol{x}_r) f_{(r,s)}\\
-        &- \sum_{\substack{(r, s, \boldsymbol{x}_r, \boldsymbol{x}_s) \in \mathfrak{C} \vspace{0.2em} \\
-        s=m}} \delta(\boldsymbol{x}_m - \boldsymbol{x}_s) f_{(r,s)}
-    \end{aligned}
-\end{equation}
-where $\mathfrak{C}$ is the collection of connections, and $f_{(r,s)} = f_{(r,s), i}$ is the force (in N) of the $i$\textsuperscript{th} connection between models $r$ and $s$.
 
-To illustrate, consider two models ($M=2$), a string and a membrane, such that $q_1 = u(\chi ,t)$ and $q_2 = w(x,y,t)$, and a single connection between them, locations left undefined to retain generality: $\mathfrak{C} = \{(1, 2, \chi_\text{c}, (x_\ctxt, y_\ctxt))\}$. Notice that the string will placed below the membrane. As $\mathcal{L}_1=\mathcal{L}_\stxt$ and $\mathcal{L}_2=\mathcal{L}_\ptxt$, Eq. \eqref{eq:generalFormConnections} becomes for the string and the membrane respectively
-\begin{equation}\label{eq:contStringMembraneConn}
-    \begin{aligned}
-        \mathcal{L}_\stxt u &= \delta(\chi - \chi_\ctxt)f_{(1,2)},\\
-        \mathcal{L}_\stxt w &= -\delta(x - x_\ctxt, y-y_\ctxt)f_{(1,2)}.
-    \end{aligned}
+% is characterised by 
+
+% Following the notation in \cite{Sudholt2021}, a connection
+
+One can add connections to the models presented above by extending the general form in Eq. \eqref{eq:generalForm}. Consider $M$ models $q_m$ indexed by $m \in \mathcal{M}$, where $\mathcal{M} = \{1, \hdots, M\}$ and $C$ connections between them. A connection is indexed by $c\in \mathcal{C}$ with $\mathcal{C} = \{1, \hdots, C\}$, and is characterised by the indices of the models it connects -- $r_c \in \mathcal{M}$ and $s_c\in \mathcal{M}$ -- and the locations where these models are connected -- $\boldsymbol{x}_{r, c}\in \mathcal{D}_{r_c}$ and $\boldsymbol{x}_{s, c}\in \mathcal{D}_{s_c}$. Here, domains $\mathcal{D}_{r_c}$ and $\mathcal{D}_{s_c}$ are the (spatial) domains that models $q_{r_c}$ and $q_{s_c}$ are defined for.  
+
+Model $q_{r_c}$ will be placed `below' $q_{s_c}$ such that the connection force acts positively on the former and negatively on the latter. The general form in Eq. \eqref{eq:generalForm} can then be extended to include connections according to
+% A connection between models $q_{r_c}$ and $q_{s_c}$ where model indices $r_c \in \mathcal{M}$ and $s_c\in \mathcal{M}$ is indexed by $c \in \mathcal{C}$, with $\mathcal{C} = \{1, \hdots, C\}$. Apart from the models it connects between 
+%  at locations $\boldsymbol{x}_{r, c} \in \mathcal{D}_{r_c}$, and $\boldsymbol{x}_{s, c} \in \mathcal{D}_{s_c}$ respectively, can be described by the following 4-tuple $(r_c, s_c, \boldsymbol{x}_{r, c}, \boldsymbol{x}_{s, c})$. Here, model $q_r$ is placed `below' model $q_s$, such that the connection force acts positively on the former and negatively on the latter.  The general form in Eq. \eqref{eq:generalForm} can then be extended to include connections according to
+\begin{equation}\label{eq:generalFormConnections}
+    \!\!\!\mathcal{L}_mq_m =\!\sum_{\substack{c\in \mathcal{C}\vspace{0.1em}\\ r_c = m}}\!\! \delta(\boldsymbol{x}_m - \boldsymbol{x}_{r, c}) f_c-\!\! \sum_{\substack{c\in \mathcal{C}\vspace{0.1em}\\ s_c = m}}\!\! \delta(\boldsymbol{x}_m - \boldsymbol{x}_{s,c}) f_c,
 \end{equation}
+where $f_c$ is the force (in N) of the $c$\textsuperscript{th} connection.
+
+To illustrate, consider two models ($M=2$), a string and a membrane, such that $q_1 = u(\chi ,t)$ and $q_2 = w(x,y,t)$, and a single connection between them ($C = 1$). Placing the string below the membrane, we get that $r_1 = 1$ and $s_1 = 2$, i.e., the `below' model of connection $1$ has index $1$, the `above' model of connection $1$ has index $2$. Filling in the partial differential operators for the string and membrane found in Eqs. \eqref{eq:stiffString} and \eqref{eq:stiffMembrane} respectively, Eq. \eqref{eq:generalFormConnections} becomes for the string and the membrane respectively
+\begin{subequations}
+\begin{align}\label{eq:contStringMembraneConn}
+        \mathcal{L}_\stxt u &= \delta(\chi - \chi_\ctxt)f_1,\\
+        \mathcal{L}_\stxt w &= -\delta(x - x_\ctxt, y-y_\ctxt)f_1.
+\end{align}
+\end{subequations}
 % where $\chi_\ctxt$ and $(x_\ctxt, y_\ctxt)$ are the respective connection locations along the string, and on the membrane. The connection force is denoted by $f_\ctxt$ (in N) and has an equal and opposite effect on the string and membrane respectively. It is important to take note of the relative location of the two connected systems, i.e., whether a system is placed `above' or `below' the other as this will determine the signs of the connection forces in Eq. \eqref{eq:contStringMembraneConn}. In this case, the string is placed above the membrane. 
 
 In this work, three possible connections are considered: rigid, the linear spring and the nonlinear spring. First, the rigid connection assumes that the connected systems have an identical displacement at their respective connection locations. Using the string-membrane example, the following indicates a rigid connection \cite{theBible}: 
