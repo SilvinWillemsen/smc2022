@@ -359,9 +359,19 @@ is a spreading operator that localises the connection force of the $c$\textsuper
 For a rigid connection, the force can be solved for by 
 
 \begin{equation}
-    f_c^n = \frac{q_{r_c}^\star - q_{s_c}^\star}{\frac{k^2h_{r_c}^{d_{r_c}}}{a_{r_c}} + \frac{k^2}{a_{s_c}}}
+    f_c^n = \frac{I_{s_c,\boldsymbol{l}, c}(\boldsymbol{x})q_{s_c}^\star - I_{r_c,\boldsymbol{l}, c}(\boldsymbol{x})q_{r_c}^\star}{\frac{\lVert J_{r_c,\boldsymbol{l}, c}(\boldsymbol{x}_{r,c})\rVert^2_{d_{r_c}}}{a_{r_c}}+ \frac{\lVert J_{r_c,\boldsymbol{l}, c}(\boldsymbol{x}_{s,c})\rVert^2_{d_{s_c}}}{a_{s_c}}}
 \end{equation}
 
+Using the following FDTD operators:
+\begin{align}
+    \mtd q_{\boldsymbol{l}}^n &= \frac{1}{2}\left(q_{\boldsymbol{l}}^{n+1}+q_{\boldsymbol{l}}^{n-1}\right)\\
+    \dtd q_{\boldsymbol{l}}^n &= \frac{1}{2k}\left(q_{\boldsymbol{l}}^{n+1}-q_{\boldsymbol{l}}^{n-1}\right)
+\end{align}
+the connection force in Eq. \eqref{eq:nonlinearSpring} can be discretised according to
+\begin{equation}\label{eq:nonlinearSpringDisc}
+    f_\ctxt^n = K_1\mtd\eta^n + K_3(\eta^n)^2\mtd\eta^n + R\dtd \eta^n.
+\end{equation}
+It can be shown that this discretisation yields a stable system \cite{theBible}.
 \subsection{Excitations}\label{sec:discExcitations}
 For the bow, a cubic interpolator $J_3$ is introduced
 \begin{equation}\label{eq:cubicJ}
