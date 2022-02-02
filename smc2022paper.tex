@@ -489,9 +489,7 @@ Note that the force will be scaled by the grid spacing through the inclusion of 
 \section{Real-Time Application}
 
 Figure \ref{fig:gui} shows the graphical user interface of the application. The application is divided into three parts: the control panel (bottom), the excitation panel (right), and the instruments / interaction area. After describing the system architecture, this section will go into detail for all three components of the application.
-
-An extensive demo of the application, going through all of the functionality described in this section, can be found online\footnote{\url{https://youtu.be/o6I2DlFIbsc}}
-
+An extensive demo of the application, going through all of the functionality described in this section, can be found online\footnote{\url{https://youtu.be/o6I2DlFIbsc}}.
 \begin{figure*}[t]
     \centering
     \includegraphics[width = \textwidth]{GUI.png}
@@ -500,6 +498,13 @@ An extensive demo of the application, going through all of the functionality des
 \end{figure*}
 \subsection{System Architecture}
 Figure \ref{fig:systemLayout} shows 
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width = \columnwidth]{systemArchitectureSMC2022.pdf}
+    \caption{System Architecture. }
+    \label{fig:systemArchitecture}
+\end{figure}
 
 The application can contain several independent instruments each of which can possess several resonators. Every 1D resonator has three exciter modules, one for each of the excitations described in this paper. Furthermore, instruments contain information about the connections between various resonators
 
