@@ -21,6 +21,11 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{Borin1989}
+G.~Borin, G.~De~Poli, and A.~Sarti, ``A modular approach to excitator-resonator
+  interaction in physical models syntheses,'' \emph{Proceedings of the
+  International Computer Music Conference}, 1989.
+
 \bibitem{Cadoz1983}
 C.~Cadoz, A.~Luciani, and J.-L. Florens, ``Responsive input devices and sound
   synthesis by simulation of instrumental mechanisms: the {CORDIS} system,''
@@ -85,7 +90,7 @@ S.~Bilbao, M.~Ducceschi, and C.~Webb, ``Large-scale real-time modular physical
   Conference on Digital Audio Effects (DAFx-19)}, 2019.
 
 \bibitem{Sudholt2021}
-D.~S{\"u}dholt, R.~Russo, and S.~Serafin, ``A {FAUST} implementation of coupled
+D.~S{\"u}dholt, R.~Russo, and S.~Serafin, ``A faust implementation of coupled
   finite difference schemes,'' in \emph{Proceedings of the 2nd Nordic Sound and
   Music Computing (NordicSMC) Conference}, 2021.
 
@@ -100,16 +105,33 @@ S.~Willemsen, S.~Serafin, S.~Bilbao, and M.~Ducceschi, ``Real-time
   \emph{Proceedings of the 17th Sound and Music Computing Conference}, 2020,
   pp. 161--168.
 
-\bibitem{Borin1989}
-G.~Borin, G.~De~Poli, and A.~Sarti, ``A modular approach to excitator-resonator
-  interaction in physical models syntheses,'' \emph{Proceedings of the
-  International Computer Music Conference}, 1989.
+\bibitem{Lasickas2021}
+T.~Lasickas, S.~Willemsen, and S.~Serafin, ``Real-time implementation of the
+  shamisen using finite difference schemes,'' in \emph{Proceedings of the 18th
+  Sound and Music Computing (SMC) Conference}, 2021, pp. 100--107.
+
+\bibitem{Sudholt2021Langeleik}
+D.~S{\"u}dholt, S.~V.~K. Lyster, O.~B. Winkel, and S.~Serafin, ``A real-time
+  interactive physical model of the langeleik using finite difference schemes
+  and web audio,'' in \emph{Proceedings of the 2nd Nordic Sound and Music
+  Computing (NordicSMC) Conference}, 2021.
+
+\bibitem{Mosen2021}
+S.~R. Mosen, O.~I. Kristjansson, A.~Adjorlu, and S.~Serafin, ``Real-time
+  implementation of a physical model of the persian santur,'' in
+  \emph{Proceedings of the 2nd Nordic Sound and Music Computing (NordicSMC)
+  Conference}, 2021.
 
 \bibitem{Bensa2003}
 J.~Bensa, S.~Bilbao, R.~Kronland-Martinet, and J.~O. Smith, ``The simulation of
   piano string vibration: From physical models to finite difference schemes and
   digital waveguides,'' \emph{Journal of the Acoustical Society of America
   (JASA)}, vol. 114, no.~2, pp. 1095--1107, 2003.
+
+\bibitem{Webb2015}
+C.~Webb and S.~Bilbao, ``On the limits of real-time physical modelling
+  synthesis with a modular environment,'' in \emph{Proceedings of the 18th
+  International Conference on Digital Audio Effects (DAFx)}, 2015.
 
 \bibitem{Fletcher1998}
 N.~H. Fletcher and T.~D. Rossing, \emph{The Physics of Musical

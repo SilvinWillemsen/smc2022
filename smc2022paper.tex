@@ -241,7 +241,7 @@ Section \ref{sec:discConnections} will elaborate on how to calculate the connect
 % where $f_{\ctxt, i}$ is the connection force (in N) of the $i$\textsuperscript{th} connection of system $q$ and the spatial Dirac delta function $\delta(\boldsymbol{x}-\boldsymbol{x}_{\ctxt, i})$ locates the effect of the connection to a single location $\boldsymbol{x}_{\ctxt, i}\in \mathcal{D}$.
   
   
-To illustrate, consider two models ($M=2$), a string and a membrane, such that $q_1 = u(\chi ,t)$ and $q_2 = w(x,y,t)$, and a single connection between them ($C = 1$) at unspecified locations $\chi_\ctxt \in \mathcal{D}_{r_1}$ and $(x_\ctxt, y_\ctxt) \in \mathcal{D}_{s_1}$ respectively. Placing the string below the membrane, we get that $r_1 = 1$ and $s_1 = 2$, i.e., the `below' model of connection $1$ has index $1$, the `above' model of connection $1$ has index $2$. Substituting the partial differential operators for the string and membrane found in Eqs. \eqref{eq:stiffString} and \eqref{eq:stiffMembrane} respectively, Eq. \eqref{eq:generalFormConnections} becomes, for the string and the membrane respectively
+To illustrate, consider two models ($M=2$), a string and a membrane, such that $q_1 = u(\chi ,t)$ and $q_2 = w(x,y,t)$, and a single connection between them ($C = 1$) at unspecified locations $\chi_\ctxt \in \mathcal{D}_{r_1}$ and $(x_\ctxt, y_\ctxt) \in \mathcal{D}_{s_1}$ respectively. See Figure \ref{fig:snapshot}. Placing the string below the membrane, we get that $r_1 = 1$ and $s_1 = 2$, i.e., the `below' model of connection $1$ has index $1$, the `above' model of connection $1$ has index $2$. Substituting the partial differential operators for the string and membrane found in Eqs. \eqref{eq:stiffString} and \eqref{eq:stiffMembrane} respectively, Eq. \eqref{eq:generalFormConnections} becomes, for the string and the membrane respectively
 \begin{subequations}
 \begin{align}\label{eq:contStringMembraneConn}
         \mathcal{L}^{(1)} u &= \delta(\chi - \chi_\ctxt)f_1,\\
@@ -325,7 +325,7 @@ Finally, with reference to Eq. \eqref{eq:generalFormString}, the excitation dist
 Note that $\chi_\etxt $ and $e_\text{w}$ must be chosen such that $\chi_\etxt - \frac{e_\text{w}}{2}\in \mathcal{D}$ and $\chi_\etxt + \frac{e_\text{w}}{2} \in \mathcal{D}$.
 \subsubsection{Pluck}
 The pluck is modelled nearly the same way as the hammer. The main difference is that $\tau = 1$ until the collision force is larger than a certain value, after which it will be set to $0$. This will be elaborated on in Section \ref{sec:discExcitations}.
-\begin{figure}[h]
+\begin{figure}[t]
     \centering
     \includegraphics[width = \columnwidth]{snapshot.pdf}
     \caption{Snapshot of the application including a string and a thin plate with a connection between them. The string is excited using a pluck.}
@@ -487,22 +487,40 @@ For the pluck, if $|J_{p, 0}(\chi_\etxt) f_\etxt| > \varphi$ where $\varphi$ is 
 Note that the force will be scaled by the grid spacing through the inclusion of $J_{p, 0}$ such that the plucking interaction will be similar for strings with different values of $h$. 
 
 \section{Real-Time Application}
-Only 1D models can be excited
 
-The application is divided into three parts: the control panel (bottom), the excitation panel (right), and the instrument area. 
+Figure \ref{fig:gui} shows the graphical user interface of the application. The application is divided into three parts: the control panel (bottom), the excitation panel (right), and the instruments / interaction area. After describing the \SWcomment[system architecture], this section will go into detail for all three components of the application.
 
-An extensive demo of the application, going through all of the functionality described in this section, can be found online\footnote{youtubelink here}
+An extensive demo of the application, going through all of the functionality described in this section, can be found online\footnote{\url{https://youtu.be/o6I2DlFIbsc}}
 
-\subsection{Model Interaction}
-scroll wheel is linked to $-0.2 \leq v_\Btxt \leq 0.2$ if the bowing excitation is chosen. If instead the hammer or pluck interaction are chosen, the scrollwheel is linked to the excitation width $h \leq e_\text{w} \leq 10 h$. . 
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width = \textwidth]{GUI.png}
+    \caption{The graphical user interface (GUI) of the application. Here the guitar preset is loaded }
+    \label{fig:gui}
+\end{figure*}
+\subsection{System Architecture}
+Figure \ref{fig:systemLayout} shows 
 
-The direction of the bowing is visualised with a moving gradient 
+The application can contain several independent instruments each of which can possess several resonators. Every 1D resonator has three exciter modules, one for each of the excitations described in this paper. Furthermore, instruments contain information about the connections between various resonators
+
 \subsection{Control panel}
-If a button is clicked
+The control panel contians several buttons, the visibility of which is controlled by the state of the application.  If a button is clicked
 
 The states of all resonator modules will be set to 0.
 
 Instructions will be shown... 
+
+\subsection{Instrument area}
+
+
+\subsubsection{Model Interaction}
+Only 1D models can be excited
+
+scroll wheel is linked to $-0.2 \leq v_\Btxt \leq 0.2$ if the bowing excitation is chosen. If instead the hammer or pluck interaction are chosen, the scrollwheel is linked to the excitation width $h \leq e_\text{w} \leq 10 h$. . 
+
+The direction of the bowing is visualised with a moving gradient 
+
+
 \subsubsection{Modules}
 The various modules a user can choose are the following
 \begin{itemize}
@@ -531,6 +549,20 @@ Although experiments with overlapping connections have been done, it has been de
 \subsubsection{Groups}
 Various models can be grouped together
 \subsubsection{Presets}
+\begin{itemize}
+    \item Instrument 0
+    \begin{itemize}
+        \item Resonator 0
+        \begin{itemize}
+            \itemsep0em 
+            \item Parameter 1
+            \item Parameter 2
+            \item ...
+        \end{itemize}
+        \item Resonator 1
+        \item Resonator 2
+    \end{itemize}
+\end{itemize}
 
 \subsection{Excitation}
 The excitation panel contains a dropdown menu including the bow, hammer and pluck excitations.
@@ -568,7 +600,7 @@ If the hammer is triggered when the mass is further away from the string, the ex
         No graphics & 3.8 & 8.3 & 13 & 13\\
         Graphics & 12.7 & 28.4 & 42.3 & 43.1\\\hline
     \end{tabular}
-    \caption{CPU usage (in \%) of two identical strings ($N=118$) with all moving grid points connected in various ways.}
+    \caption{CPU usage (in \%) of two identical strings ($N=118$) with all moving grid points connected ($C = 117$) using various connection types.}
     \label{tab:CPU}
 \end{table}
 
