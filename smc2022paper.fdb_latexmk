@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex smc2022paper"] 1643786715 "smc2022paper.aux" "smc2022paper.bbl" "smc2022paper" 1643799115
+["bibtex smc2022paper"] 1643799270 "smc2022paper.aux" "smc2022paper.bbl" "smc2022paper" 1643817619
   "./IEEEtran.bst" 1643268784 59215 bc5380b3434a66b895bbc75d3d380540 ""
   "smc2022bib.bib" 1643784422 8015 69f9881988d2d565648ecbda136a7f9e ""
-  "smc2022paper.aux" 1643799115 9033 fbc1f485e1a13ac0d9a5f93c97c0698c "pdflatex"
+  "smc2022paper.aux" 1643817618 9240 d531079bdebdab44d5e411706ed30d33 "pdflatex"
   (generated)
   "smc2022paper.bbl"
   "smc2022paper.blg"
-["pdflatex"] 1643799114 "/Users/SilvinW/repositories/smc2022/smc2022paper.tex" "/Users/SilvinW/repositories/smc2022/smc2022paper.pdf" "smc2022paper" 1643799115
-  "/Users/SilvinW/repositories/smc2022/smc2022paper.aux" 1643799115 9033 fbc1f485e1a13ac0d9a5f93c97c0698c ""
-  "/Users/SilvinW/repositories/smc2022/smc2022paper.tex" 1643799114 43466 c5d70249a6e2ba1f05e658877891ab3c ""
+["pdflatex"] 1643817618 "/Users/SilvinW/repositories/smc2022/smc2022paper.tex" "/Users/SilvinW/repositories/smc2022/smc2022paper.pdf" "smc2022paper" 1643817619
+  "/Users/SilvinW/repositories/smc2022/smc2022paper.aux" 1643817618 9240 d531079bdebdab44d5e411706ed30d33 ""
+  "/Users/SilvinW/repositories/smc2022/smc2022paper.tex" 1643817617 43657 70d7525815ed25b4081afa30c6975540 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -140,16 +140,17 @@
   "GUI.png" 1643785827 195672 20164d861f181a39d4371f9b0d49a3c2 ""
   "preamble.tex" 1643268993 4746 90b904e90217f2ecf7c292f6984ed114 ""
   "smc.sty" 1643268784 5711 1ff83a76460e59b8e9c701b803364f84 ""
-  "smc2022paper.aux" 1643799115 9033 fbc1f485e1a13ac0d9a5f93c97c0698c "pdflatex"
-  "smc2022paper.bbl" 1643786715 6759 776e3b08224381f6fb8e9bd856e60b50 "bibtex smc2022paper"
-  "smc2022paper.out" 1643799115 2019 40e02ad067292747c1fe0ad7db39f8ec "pdflatex"
-  "smc2022paper.tex" 1643799114 43466 c5d70249a6e2ba1f05e658877891ab3c ""
+  "smc2022paper.aux" 1643817618 9240 d531079bdebdab44d5e411706ed30d33 "pdflatex"
+  "smc2022paper.bbl" 1643799270 6759 776e3b08224381f6fb8e9bd856e60b50 "bibtex smc2022paper"
+  "smc2022paper.out" 1643817618 2019 40e02ad067292747c1fe0ad7db39f8ec "pdflatex"
+  "smc2022paper.tex" 1643817617 43657 70d7525815ed25b4081afa30c6975540 ""
   "snapshot.pdf" 1643784422 131939 edc471ddf002521618faade7c3ed2fc8 ""
+  "systemArchitectureSMC2022.pdf" 1643799269 28060 92e77b4567941f4df03533d8f90cb9fe ""
   (generated)
-  "smc2022paper.log"
-  "smc2022paper.pdf"
-  "smc2022paper.out"
-  "smc2022paper.aux"
-  "preamble.aux"
-  "/Users/SilvinW/repositories/smc2022/smc2022paper.pdf"
   "/Users/SilvinW/repositories/smc2022/smc2022paper.log"
+  "smc2022paper.aux"
+  "/Users/SilvinW/repositories/smc2022/smc2022paper.pdf"
+  "smc2022paper.out"
+  "smc2022paper.pdf"
+  "preamble.aux"
+  "smc2022paper.log"
