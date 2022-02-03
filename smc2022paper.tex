@@ -493,20 +493,20 @@ An extensive demo of the application, going through all of the functionality des
 \begin{figure*}[t]
     \centering
     \includegraphics[width = \textwidth]{GUI.png}
-    \caption{The graphical user interface (GUI) of the application. Here the guitar preset is loaded }
+    \caption{The graphical user interface (GUI) of the application. Here the guitar preset is loaded.}
     \label{fig:gui}
 \end{figure*}
 \subsection{System Architecture}
-Figure \ref{fig:systemLayout} shows 
+Figure \ref{fig:systemArchitecture} illustrates the architecture of the audio-generating part of the application.
 
-\begin{figure}[t]
+\begin{figure}[h]
     \centering
     \includegraphics[width = \columnwidth]{systemArchitectureSMC2022.pdf}
     \caption{System Architecture. }
     \label{fig:systemArchitecture}
 \end{figure}
 
-The application can contain several independent instruments each of which can possess several resonators. Every 1D resonator has three exciter modules, one for each of the excitations described in this paper. Furthermore, instruments contain information about the connections between various resonators
+The application can contain several independent instruments each of which can possess several resonators. Every 1D resonator has three exciter modules, one for each of the excitations described in this paper. Furthermore, instruments contain information about the connections between various resonators. 
 
 \subsection{Control panel}
 The control panel contains several buttons, the visibility of which is controlled by the state of the application. If a button is clicked
