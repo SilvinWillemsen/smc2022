@@ -506,12 +506,25 @@ Figure \ref{fig:systemArchitecture} illustrates the architecture of the audio-ge
     \label{fig:systemArchitecture}
 \end{figure}
 
-The application can contain several independent instruments each of which can possess several resonators. Every 1D resonator has three exciter modules, one for each of the excitations described in this paper. Furthermore, instruments contain information about the connections between various resonators. 
+
+The application can contain several independent instruments each of which can possess several resonators. Every 1D resonator has three exciter modules, one for each of the excitations described in this paper. Furthermore, instruments contain information about the connections between various resonators.
+
+\subsection{Resonator modules}
+The available resonators are: the stiff string, bar, membrane, thin plate and stiff membrane. 
+
+For the stiff string and the bar an advanced and non-advanced list of parameters  
+\begin{itemize}
+    \item Stiff string
+    \item Bar
+    \item Membrane
+    \item Thin Plate
+    \item Stiff Membrane
+\end{itemize}
 
 \subsection{Control panel}
-The control panel contains several buttons, the visibility of which is controlled by the state of the application. If a button is clicked
+The control panel contains several buttons, the visibility of which is controlled by the state of the application. The main buttons are: `Add Instrument', `Add Resonator Module', `Remove Resonator Module', `Edit In- Outputs', `Edit Connections', `Edit Groups'. If any of the three latter buttons are clicked, the control panel will show instructions on how to edit the chosen option. Additional buttons are related to loading and saving presets, further elaborated on in Section \ref{sec:presets} 
 
-The states of all resonator modules will be set to 0.
+For any  button is pressed states of all resonator modules will be set to 0.
 
 Instructions will be shown... 
 
@@ -553,7 +566,7 @@ Although experiments with overlapping connections have been done, it has been de
 
 \subsubsection{Groups}
 Various models can be grouped together
-\subsubsection{Presets}
+\subsubsection{Presets}\label{sec:presets}
 \begin{itemize}
     \item Instrument 0
     \begin{itemize}
