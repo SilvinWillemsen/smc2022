@@ -153,4 +153,10 @@ M.~Ducceschi, S.~Bilbao, S.~Willemsen, and S.~Serafin, ``Linearly-implicit
   \emph{Journal of the Acoustical Society of America (JASA)}, vol. 149, pp.
   3502--3516, 2021.
 
+\bibitem{demo}
+\BIBentryALTinterwordspacing
+S.~Willemsen, ``Modular instrument demo,'' 2021. [Online]. Available:
+  \url{https://youtu.be/o6I2DlFIbsc}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

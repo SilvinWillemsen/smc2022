@@ -15,17 +15,16 @@
 \BOOKMARK [3][-]{subsubsection.3.3.2}{3.3.2 Hammer and Pluck}{subsection.3.3}% 15
 \BOOKMARK [1][-]{section.4}{ 4. Real-Time Application}{}% 16
 \BOOKMARK [2][-]{subsection.4.1}{4.1 System Architecture}{section.4}% 17
-\BOOKMARK [2][-]{subsection.4.2}{4.2 Control panel}{section.4}% 18
-\BOOKMARK [2][-]{subsection.4.3}{4.3 Instrument area}{section.4}% 19
-\BOOKMARK [3][-]{subsubsection.4.3.1}{4.3.1 Model Interaction}{subsection.4.3}% 20
-\BOOKMARK [3][-]{subsubsection.4.3.2}{4.3.2 Modules}{subsection.4.3}% 21
-\BOOKMARK [3][-]{subsubsection.4.3.3}{4.3.3 Outputs}{subsection.4.3}% 22
-\BOOKMARK [3][-]{subsubsection.4.3.4}{4.3.4 Connections}{subsection.4.3}% 23
-\BOOKMARK [3][-]{subsubsection.4.3.5}{4.3.5 Groups}{subsection.4.3}% 24
-\BOOKMARK [3][-]{subsubsection.4.3.6}{4.3.6 Presets}{subsection.4.3}% 25
-\BOOKMARK [2][-]{subsection.4.4}{4.4 Excitation}{section.4}% 26
-\BOOKMARK [2][-]{subsection.4.5}{4.5 Fixed parameters}{section.4}% 27
-\BOOKMARK [1][-]{section.5}{ 5. Results}{}% 28
-\BOOKMARK [1][-]{section.6}{ 6. Discussion}{}% 29
-\BOOKMARK [1][-]{section.7}{ 7. Conclusion}{}% 30
-\BOOKMARK [1][-]{section.8}{ 8. References}{}% 31
+\BOOKMARK [2][-]{subsection.4.2}{4.2 Instrument area}{section.4}% 18
+\BOOKMARK [3][-]{subsubsection.4.2.1}{4.2.1 Resonator Modules}{subsection.4.2}% 19
+\BOOKMARK [3][-]{subsubsection.4.2.2}{4.2.2 Connections}{subsection.4.2}% 20
+\BOOKMARK [3][-]{subsubsection.4.2.3}{4.2.3 Exciter Modules}{subsection.4.2}% 21
+\BOOKMARK [2][-]{subsection.4.3}{4.3 Control panel}{section.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.3.1}{4.3.1 Outputs}{subsection.4.3}% 23
+\BOOKMARK [3][-]{subsubsection.4.3.2}{4.3.2 Groups}{subsection.4.3}% 24
+\BOOKMARK [2][-]{subsection.4.4}{4.4 Excitation panel}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.5}{4.5 Presets}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.6}{4.6 Fixed parameters}{section.4}% 27
+\BOOKMARK [1][-]{section.5}{ 5. Results and Discussion}{}% 28
+\BOOKMARK [1][-]{section.6}{ 6. Conclusion}{}% 29
+\BOOKMARK [1][-]{section.7}{ 7. References}{}% 30

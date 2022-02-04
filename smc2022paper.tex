@@ -418,7 +418,7 @@ and can be applied to grid function $q_{m, \boldsymbol{l}_m}^n$, to to obtain th
 \end{equation}
 where $\varepsilon$ is the number of spatial dimensions the system is defined over ($\varepsilon = 1$ for 1D systems, $\varepsilon = 2$ for 2D systems). Equation \eqref{eq:spreading} can then be used to localise a force onto a specific location along a system. 
 The general form in Eq. \eqref{eq:generalFormConnections} can be discretised to
-\begin{equation}\label{eq:generalFormConnections}
+\begin{equation}\label{eq:generalFormConnectionsDisc}
     \!\!\!\ell_mq_{m, \boldsymbol{l}_m}^n =\!\sum_{\substack{c\in \mathfrak{C}\vspace{0.1em}\\ r_c = m}}\!\! J_{m, \boldsymbol{l}_m}(\boldsymbol{x}_{r, c}) f_c^n-\!\! \sum_{\substack{c\in \mathfrak{C}\vspace{0.1em}\\ s_c = m}}\!\! J_{m, \boldsymbol{l}_m}(\boldsymbol{x}_{s, c}) f_c^n,
 \end{equation}
 
@@ -492,7 +492,7 @@ For the pluck, $\tau$ will be set to 0 if $|f_\etxt / h| > \varphi$, where $\var
 
 \section{Real-Time Application}\label{sec:application}
 A real-time application implementing the models above has been created in C++ using the JUCE framework\footnote{\url{https://juce.com}}. Figure \ref{fig:gui} shows the graphical user interface of the application using the guitar preset for illustration. The application is controlled using the mouse, and divided into three main parts: the instrument area, the control panel (bottom) and the excitation panel (right). After describing the system architecture, this section will go into detail for all three components of the application.
-An extensive demo of the application, going through all of the functionality described in this section, can be found online\footnote{\url{https://youtu.be/o6I2DlFIbsc}}.
+An extensive demo of the application, going through all of the functionality described in this section, can be found via \cite{demo}.
 
 \subsection{System Architecture}
 Figure \ref{fig:systemArchitecture} illustrates the architecture of the audio-generating part of the application. The application can contain several independent instruments \SWcomment[something about that this is more for future implementation in VR] each of which can contain several resonators. Furthermore, instruments contain information about the connections between various resonators. Every 1D resonator has three exciter modules, one for each of the excitations described in this paper. Only one of the exciter modules is activated at a time, controlled by the excitation panel (see Section \ref{sec:excitationPanel}). 
@@ -540,10 +540,10 @@ If any button is pressed, the states of all resonator modules will be set to 0 t
 
 \subsubsection{Outputs}
 
-The output of any model can be obtained by listening to $q(\boldsymbol{l}_\text{o}, t)$ for an output location $\boldsymbol{l}_\text{o}$. In the application it is possible to change the output locations by clicking the `Edit In- Outputs' button. Outputs will show as downwards pointing arrows, where left, right and stereo channels are shown in white, red and yellow respectively. Functionality to add inputs has been left for future work (see Section \ref{sec:conclusion}).
+The output of any model can be obtained by listening to $q(\boldsymbol{l}_\text{o}, t)$ for an output location $\boldsymbol{l}_\text{o}$. In the application it is possible to change the output locations by clicking the `Edit In- Outputs' button. For 1D systems, outputs will show as downwards pointing arrows from the system state at the respective output locations. For 2D systems, rectangles around the output grid point are used. Left, right and stereo channels are shown in white, red and yellow respectively. Functionality to add inputs has been left for future work (see Section \ref{sec:conclusion}).
 
 \subsubsection{Groups}
-Various models can be grouped together
+Various 1D models can be grouped together to be excited simultaneously. If the `Edit Groups' button is pressed, the user can add groups and click on resonator modules to add them to groups 
 
 
 \subsection{Excitation panel}\label{sec:excitationPanel}
@@ -577,7 +577,7 @@ Presets are saved in `.xml' files and have the following structure
 
 
 \subsection{Fixed parameters}
-The parameters of the resonator modules can easily be altered by the user when adding one to the application. The parameters found in Table \ref{tab:parameters}, however, can not be altered by the user.
+The parameters of the resonator modules can easily be altered by the user when adding one to the application. The parameters found in Table \ref{tab:parameters}, however, can not be altered by the user, and have been set to result in pleasing sounds for many different model configurations.
 \begin{table}[h]\label{tab:parameters}
 \begin{center}
 \begin{tabular}{|l|c|c|}
@@ -602,13 +602,27 @@ The parameters of the resonator modules can easily be altered by the user when a
 \end{table}
 
 \section{Results and Discussion}\label{sec:resDiscuss}
+Table \ref{tab:CPU} shows the CPU usage
+
+Tests were carried out on a MacBook Pro with a 2,3 GHz Intel i9 processor.
+
 To the best of the authors' knowledge, the way of real-time interactive excitation used for the hammer and the pluck has not been done before. 
 
 \begin{table}[]
     \centering
     \begin{tabular}{|l|c|c|c|c|}
-        \hline  & None & Rigid & Linear & Nonlinear \\\hline
-        No graphics & 3.8 & 8.3 & 13 & 13\\
+        \hline
+    \multicolumn{5}{|l|}{\bf Strings ($N = 118$)}\\\hline
+    No. & 1 & 5 & 10 & 20 \\\hline
+    No graphics & 1.7 & 7.4 & 12.3 &26.8\\
+    Graphics & 8.3 & 14.0  & 19.4 & 35.0\\\hline
+    \multicolumn{5}{|l|}{\bf Plate}\\\hline
+    $N_x \cdot N_y$& & & & \\\hline
+    No graphics & & & &\\
+    Graphics & & & &\\\hline
+    \multicolumn{5}{|l|}{\bf Two connected strings ($N=118$)}\\\hline  
+    Type & None & Rigid & Linear & Nonlinear \\\hline
+        No graphics & 3.8 & 8.3 & 13.1 & 13.3\\
         Graphics & 12.7 & 28.4 & 42.3 & 43.1\\\hline
     \end{tabular}
     \caption{CPU usage (in \%) of two identical strings ($N=118$) with all moving grid points connected ($C = 117$) using various connection types.}
@@ -641,6 +655,7 @@ This work has been funded in part by the European Art-Science-Technology Network
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %bibliography here
+{\small
 \bibliography{smc2022bib}
-
+}
 \end{document}

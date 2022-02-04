@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.11.23)  2 FEB 2022 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.11.23)  4 FEB 2022 09:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -261,11 +261,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 93.
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count199
 \l__pdf_internal_box=\box47
-) (/Users/SilvinW/repositories/smc2022/smc2022paper.aux
-
-LaTeX Warning: Label `eq:generalFormConnections' multiply defined.
-
-)
+) (/Users/SilvinW/repositories/smc2022/smc2022paper.aux)
 \openout1 = `smc2022paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
@@ -361,115 +357,119 @@ Overfull \hbox (3.1047pt too wide) in paragraph at lines 145--146
  []
 
 
-Overfull \hbox (3.42468pt too wide) in paragraph at lines 149--150
-\OT1/ptm/m/n/10 si-cal in-stru-ments, or rather ar-bi-trary sound-generators based
+Overfull \hbox (3.49487pt too wide) in paragraph at lines 149--150
+\OT1/ptm/m/n/10 than mod-elling ex-ist-ing in-stru-ments. Fur-ther-more, the mod-
  []
 
-
-LaTeX Warning: Reference `sec:' on page 1 undefined on input line 155.
-
-LaTeX Font Info:    Trying to load font information for OMS+ntxsy on input line 158.
-LaTeX Font Info:    No file OMSntxsy.fd. on input line 158.
+LaTeX Font Info:    Trying to load font information for OMS+ntxsy on input line 156.
+LaTeX Font Info:    No file OMSntxsy.fd. on input line 156.
 
 LaTeX Font Warning: Font shape `OMS/ntxsy/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 158.
+(Font)              using `OMS/cmsy/m/n' instead on input line 156.
 
-[1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 
 
 ]
-Overfull \hbox (14.27483pt too wide) in paragraph at lines 164--165
+Overfull \hbox (14.27483pt too wide) in paragraph at lines 162--163
 []\OT1/ptm/m/n/10 This sec-tion presents the par-tial dif-fer-en-tial equa-tions (PDEs)
  []
 
 
-Overfull \hbox (16.31587pt too wide) in paragraph at lines 200--201
+Overfull \hbox (5.1145pt too wide) in paragraph at lines 167--171
+\OT1/ptm/m/n/10 A com-monly used 1D model (see e.g. [[][]14[][], [][]16[][]]) is the damped
+ []
+
+
+Overfull \hbox (16.31587pt too wide) in paragraph at lines 198--199
 []\OT1/ptm/m/n/10 For sim-plic-ity, bound-ary con-di-tions are cho-sen to be clamped,
  []
 
-[2]
-Overfull \hbox (1.18538pt too wide) in paragraph at lines 289--290
+LaTeX Font Info:    Trying to load font information for U+euf on input line 209.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [2]
+Overfull \hbox (1.18538pt too wide) in paragraph at lines 287--288
 \OT1/ptm/m/n/10 Another way of ex-cit-ing a sys-tem is to use a ham-mer, which
  []
 
-<snapshot.pdf, id=237, 552.0625pt x 185.19188pt>
+<snapshot.pdf, id=236, 552.0625pt x 185.19188pt>
 File: snapshot.pdf Graphic file (type pdf)
 <use snapshot.pdf>
-Package pdftex.def Info: snapshot.pdf  used on input line 330.
+Package pdftex.def Info: snapshot.pdf  used on input line 328.
 (pdftex.def)             Requested size: 233.31259pt x 78.26608pt.
-[3 </Users/SilvinW/repositories/smc2022/snapshot.pdf>] [4]
-Overfull \hbox (3.09506pt too wide) detected at line 479
+[3 </Users/SilvinW/repositories/smc2022/snapshot.pdf>]
+Overfull \hbox (4.33571pt too wide) in paragraph at lines 345--346
+[]\OT1/ptm/m/n/10 One of the main con-cerns when work-ing with FDTD meth-
+ []
+
+<GUI.png, id=273, 1018.80624pt x 342.27875pt>
+File: GUI.png Graphic file (type png)
+<use GUI.png>
+Package pdftex.def Info: GUI.png  used on input line 435.
+(pdftex.def)             Requested size: 489.38739pt x 164.41727pt.
+[4]
+Overfull \hbox (3.09506pt too wide) detected at line 485
 []\OML/cmm/m/it/10 J[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^_[]\OT1/cmr/m/n/10 ) = [] []
  []
 
-<GUI.png, id=308, 1018.80624pt x 342.27875pt>
-File: GUI.png Graphic file (type png)
-<use GUI.png>
-Package pdftex.def Info: GUI.png  used on input line 495.
-(pdftex.def)             Requested size: 489.38739pt x 164.41727pt.
-
-LaTeX Warning: Reference `fig:systemLayout' on page 5 undefined on input line 500.
-
-<systemArchitectureSMC2022.pdf, id=310, 277.035pt x 111.29579pt>
+<systemArchitectureSMC2022.pdf, id=323, 277.035pt x 111.29579pt>
 File: systemArchitectureSMC2022.pdf Graphic file (type pdf)
 <use systemArchitectureSMC2022.pdf>
-Package pdftex.def Info: systemArchitectureSMC2022.pdf  used on input line 504.
+Package pdftex.def Info: systemArchitectureSMC2022.pdf  used on input line 501.
 (pdftex.def)             Requested size: 233.31259pt x 93.73065pt.
-[5] [6 </Users/SilvinW/repositories/smc2022/GUI.png> </Users/SilvinW/repositories/smc2022/systemArchitectureSMC2022.pdf>]
-Overfull \hbox (10.64511pt too wide) in paragraph at lines 632--634
+[5 </Users/SilvinW/repositories/smc2022/GUI.png> </Users/SilvinW/repositories/smc2022/systemArchitectureSMC2022.pdf>]
+Overfull \hbox (11.3749pt too wide) in paragraph at lines 513--514
+\OT1/ptm/m/n/10 Connections be-tween res-onators are vi-su-alised us-ing coloured
+ []
+
+
+Overfull \hbox (0.99504pt too wide) in paragraph at lines 543--544
+\OT1/ptm/m/n/10 pos-si-ble to change the out-put lo-ca-tions by click-ing the `Edit
+ []
+
+[6]
+Overfull \hbox (10.64511pt too wide) in paragraph at lines 652--654
 \OT1/ptm/m/n/10 Science-Technology Net-work for Dig-i-tal Cre-ativ-ity (EASTN-
  []
 
-(/Users/SilvinW/repositories/smc2022/smc2022paper.bbl
-Underfull \hbox (badness 4303) in paragraph at lines 83--86
-[]\OT1/ptm/m/n/10 S. Willem-sen, ``The em-u-lated en-sem-ble: Real-
- []
-
-
-Underfull \hbox (badness 2310) in paragraph at lines 146--149
-[]\OT1/ptm/m/n/10 H. Hertz, ``[]Uber die ber[]uhrung fes-ter elastis-cher
- []
-
-[7])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 640.
+(/Users/SilvinW/repositories/smc2022/smc2022paper.bbl [7])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 661.
  [8
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 640.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 661.
  (/Users/SilvinW/repositories/smc2022/smc2022paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 640.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 640.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 661.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 661.
 Package rerunfilecheck Info: File `smc2022paper.out' has not changed.
-(rerunfilecheck)             Checksum: 40E02AD067292747C1FE0AD7DB39F8EC;2019.
+(rerunfilecheck)             Checksum: 7B021E08E0F02CFA55D4BECF16AFDDD8;1986.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 640.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 661.
  )
 (\end occurred when \ifx on line 45 was incomplete) 
 Here is how much of TeX's memory you used:
- 8106 strings out of 480608
- 117480 string characters out of 5903629
- 411299 words of memory out of 5000000
- 23688 multiletter control sequences out of 15000+600000
- 556166 words of font info for 79 fonts, out of 8000000 for 9000
+ 8146 strings out of 480608
+ 118022 string characters out of 5903629
+ 410813 words of memory out of 5000000
+ 23720 multiletter control sequences out of 15000+600000
+ 565408 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,14n,37p,845b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/SilvinW/repositories/smc2022/smc2022paper.pdf (8 pages, 480387 bytes).
+ 34i,14n,37p,1005b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/SilvinW/repositories/smc2022/smc2022paper.pdf (8 pages, 489246 bytes).
 PDF statistics:
- 437 PDF objects out of 1000 (max. 8388607)
- 397 compressed objects within 4 object streams
- 117 named destinations out of 1000 (max. 500000)
- 264 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 465 PDF objects out of 1000 (max. 8388607)
+ 422 compressed objects within 5 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 256 words of extra memory for PDF output out of 10000 (max. 10000000)
 
