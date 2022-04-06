@@ -171,7 +171,7 @@ A commonly used 1D model (see e.g. \cite{Willemsen2019, Bilbao2019}) is the damp
 \begin{equation}\label{eq:stiffString}
     \mathcal{L}^{(1)}= \rho A\ptt - T\pcc + E I \pcccc + 2\sz\rho A\pt - 2 \so\rho A\pt\pcc,
 \end{equation}
-where $\pt$ and $\partial_\chi$ denote partial differentiation with respect to time and space respectively. The model is parameterised by material density $\rho$ (in kg/m$^3$), cross-sectional area $A = \pi r^2$ (in m$^2$), radius $r$ (in m), tension $T$ (in N), Young's modulus $E$ (in Pa), area moment of inertia $I = \pi r^4/4$ (in m$^4$) and loss coefficients $\sz$ (in s$^{-1}$) and $\so$ (in m$^2$/s). If $T=0$, the model reduces to a damped bar. Note that a circular cross-section is assumed here. Finally, in this work, the boundary conditions are chosen to be simply supported as
+where $\pt$ and $\partial_\chi$ denote partial differentiation with respect to time and space respectively. The model is parameterised by material density $\rho$ (in kg/m$^3$), cross-sectional area $A = \pi r^2$ (in m$^2$), radius $r$ (in m), tension $T$ (in N), Young's modulus $E$ (in Pa), area moment of inertia $I = \pi r^4/4$ (in m$^4$) and loss coefficients $\sz$ (in s$^{-1}$) and $\so$ (in m$^2$/s). If $T=0$, the model reduces to a damped bar and the (damped) 1D wave equation appears if $E = 0$. Note that a circular cross-section is assumed here. Finally, in this work, the boundary conditions are chosen to be simply supported as
 \begin{equation}
     u = \pcc u = 0, \quad \text{for}, \quad \chi = 0, L.
 \end{equation}
@@ -191,7 +191,7 @@ $\mathcal{D} = [0, L_x] \times [0, L_y]$, and $\mathcal{L}=\mathcal{L}^{(2)}$ is
         \mathcal{L}^{(2)} = \rho H\ptt - T \Delta + D \Delta\Delta+ 2\sz\rho H\pt - 2 \so\rho H\pt\Delta,
 \end{equation}
 Here, $\Delta = \pxx + \pyy$ is the Laplacian, and parameters are material density $\rho$ (in kg/m$^3$), thickness $H$ (in m), tension per unit length $T$ (in N/m), stiffness coefficent $D = E H^3 / 12 (1-\nu^2)$ (in kg $\cdot$ m$^2\cdot$s$^{-2}$), Young's modulus $E$ (in Pa), dimensionless Poisson's ratio $\nu$, and loss coefficients $\sz$ (in s$^{-1}$) and $\so$ (in m$^2$/s).
-If $T = 0$, the model reduces to a thin plate, and if $D=0$ it reduces to the 2D wave equation, which can be used to model a non-stiff membrane.
+If $T = 0$, the model reduces to a thin plate, and if $D=0$ it reduces to the (damped) 2D wave equation, which can be used to model a non-stiff membrane.
 %
 For simplicity, boundary conditions are chosen to be clamped, such that
 \begin{equation}
@@ -204,7 +204,7 @@ where $\nabla$ denotes `the gradient of', and ${\bf n}$ is a normal to the plate
 
 % Following the notation in \cite{Sudholt2021}, a connection
 
-One can add connections between instances of the models presented above by extending the general form in Eq. \eqref{eq:generalForm}. Consider $M$ models $q_m$ indexed by $m \in \mathfrak{M}$, where $\mathfrak{M} = \{1, \hdots, M\}$ and $C$ connections between them. A connection is indexed by $c\in \mathfrak{C}$ with $\mathfrak{C} = \{1, \hdots, C\}$, and is characterised by the indices of the models it connects -- $r_c \in \mathfrak{M}$ and $s_c\in \mathfrak{M}$ -- and the locations where these models are connected -- $\boldsymbol{x}_{r, c}\in \mathcal{D}_{r_c}$ and $\boldsymbol{x}_{s, c}\in \mathcal{D}_{s_c}$. Here, domains $\mathcal{D}_{r_c}$ and $\mathcal{D}_{s_c}$ are the (spatial) domains that models $q_{r_c}$ and $q_{s_c}$ are defined for.  
+One can add connections between instances of the models presented above by extending the general form in Eq. \eqref{eq:generalForm}. Also see Figure \ref{fig:snapshot}. Consider $M$ models $q_m$ indexed by $m \in \mathfrak{M}$, where $\mathfrak{M} = \{1, \hdots, M\}$ and $C$ connections between them. A connection is indexed by $c\in \mathfrak{C}$ with $\mathfrak{C} = \{1, \hdots, C\}$, and is characterised by the indices of the models it connects -- $r_c \in \mathfrak{M}$ and $s_c\in \mathfrak{M}$ -- and the locations where these models are connected -- $\boldsymbol{x}_{r, c}\in \mathcal{D}_{r_c}$ and $\boldsymbol{x}_{s, c}\in \mathcal{D}_{s_c}$. Here, domains $\mathcal{D}_{r_c}$ and $\mathcal{D}_{s_c}$ are the (spatial) domains that models $q_{r_c}$ and $q_{s_c}$ are defined for.  
 
 Model $q_{r_c}$ will be placed `below' $q_{s_c}$ such that the connection force acts positively on the former and negatively on the latter. The general form in Eq. \eqref{eq:generalForm} can then be extended to include connections according to
 % A connection between models $q_{r_c}$ and $q_{s_c}$ where model indices $r_c \in \mathfrak{M}$ and $s_c\in \mathfrak{M}$ is indexed by $c \in \mathfrak{C}$, with $\mathfrak{C} = \{1, \hdots, C\}$. Apart from the models it connects between 
@@ -281,7 +281,7 @@ Furthermore, the excitation distribution is set to be a single point along the s
 \end{equation}
 
 \subsubsection{Hammer}
-Another way of exciting a system is to use a hammer, which can be modelled as a simple mass-spring system. The interaction between the hammer and the string is then modelled as a collision, using the following collision potential \cite{Hertz1881}:
+Another way of exciting a system is to use a hammer, which can be modelled as a simple mass-spring system. In this work, state variable $z = z(t)$ is used to describe the displacement of the hammer from its equilibrium position (in m). The interaction between the hammer and the string is then modelled as a collision, using the following collision potential \cite{Hertz1881}:
 \begin{equation}\label{eq:potential}
     \phi(\eta_\etxt) = \frac{K_\etxt}{\alpha_\etxt+1}[\eta_\etxt]_+^{\alpha_\etxt+1},
 \end{equation}
@@ -293,15 +293,15 @@ describes the `positive part of $\eta_\etxt$' and
 \begin{equation}
     \eta_\etxt = \eta_\etxt(t) = \theta\big(u(\chi_\etxt, t) - z(t)\big)
 \end{equation}
-is the relative displacement between the string at collision location $\chi_\etxt$ (in m) and the hammer (in m). Here, $\theta = \tau$ if the string should be excited from above, and $\theta = -\tau$ if it should be excited from below, where $\tau = 1$ if the hammer interaction is triggered and $\tau = 0$ if not.  
+is the relative displacement between the string at collision location $\chi_\etxt$ (in m) and the hammer (in m). Here, $\theta = \tau$ if the string should be excited from above, and $\theta = -\tau$ if it should be excited from below, where $\tau = 1$ if the hammer interaction is triggered by the user and $\tau = 0$ if not (see Section \ref{sec:hammerPluck}). 
 
-Using a change of variables based on energy quadratisation presented in \cite{Ducceschi2021}, one can rewrite the collision potential as
+Using a change of variables based on energy quadratisation proposed by Lopes et al. in \cite{Lopes2015} and used for collisions in a musical acoustics context in \cite{Ducceschi2021}, one can rewrite the collision potential as
 \begin{equation}
     f_\text{e} = -\theta\psi \psi',
 \end{equation}
 where $\psi = \psi(\eta) = \sqrt{2\phi}$, and using dots to denote a temporal derivative, $\psi' = \dot \psi / \dot \eta$. This change of variables ultimately allows for an explicit implementation of the nonlinear collision. 
 
-Using state variable $z = z(t)$ describing the displacement of the hammer from its equilibrium position (in m), its dynamics, including the collision with the string, can be described by the following PDE:
+The dynamics of the hammer, including the collision with the string, can be described by the following PDE:
 \begin{equation}\label{eq:massSpring}
     M_\text{z}\ptt z = -K_\text{z} \Big(z - (1-\tau)z_\text{off}\Big) + \theta \psi\psi',
 \end{equation}
@@ -348,7 +348,7 @@ One of the main concerns when working with FDTD methods is the stability of the 
 \begin{equation}\label{eq:stability}
     h\geq \sqrt{\beta\left(c^2k^2 + 4 \sigma_1k+\sqrt{(c^2k^2 + 4 \sigma_1k)^2 + 16 \kappa^2k^2}\right)}
 \end{equation}
-where for the string $c^2 = T/\rho A$, $\kappa^2 = EI/\rho A$ and $\beta = 0.5$, and for the membrane $c^2 = T / \rho H$, $\kappa^2 = D/\rho H$ and $\beta = 1$. The number of intervals between grid points can then be calculated as $N = \floor[L/h]$ for 1D systems and $N_x = \floor[L_x/h]$ and $N_y = \floor[L_y/h]$ for 2D systems. Including the boundaries, discrete systems will have $N+1$ and $(N_x+1)(N_y+1)$ grid points for the 1D and 2D case respectively. 
+where for the string $c^2 = T/\rho A$, $\kappa^2 = EI/\rho A$ and $\beta = 0.5$, and for the membrane $c^2 = T / \rho H$, $\kappa^2 = D/\rho H$ and $\beta = 1$. The number of intervals between grid points can then be calculated as $N = \floor[L/h]$ for 1D systems and $N_x = \floor[L_x/h]$ and $N_y = \floor[L_y/h]$ for 2D systems, where $\floor[\cdot]$ denotes the flooring operation. Including the boundaries, discrete systems will have $N+1$ and $(N_x+1)(N_y+1)$ grid points for the 1D and 2D case respectively. 
 
 
 \subsection{FDTD schemes}
@@ -440,11 +440,11 @@ One can express the relative distance between two models ($q_{s_c}$ and $q_{r_c}
 \begin{equation}\label{eq:eta}
     \eta_c^n =  I_{s_c,\boldsymbol{l}_{s_c}}(\boldsymbol{x}_{s,c})q_{s_c, \boldsymbol{l}_{s_c}}^n - I_{r_c,\boldsymbol{l}_{r_c}}(\boldsymbol{x}_{r,c})q_{r_c, \boldsymbol{l}_{r_c}}^n.
 \end{equation}
-If a rigid connection is chosen, the force of connection $c$ can be solved for according to
+If a rigid connection is chosen, the force of connection $c$ can be solved for according to \cite{theBible}
 \begin{equation}\label{eq:rigidConnDisc}
     f_c^n = \frac{\eta^\star_c}{ \frac{k^2}{a_{r_c}\mathcal{M}_{r_c}} + \frac{k^2}{a_{s_c}\mathcal{M}_{s_c}}},
 \end{equation}
-where $\mathcal{M}_m$ is the effective mass of a single grid point (in kg) of model $q_m$, i.e., $\mathcal{M} = \rho A h$ for 1D systems, and $\mathcal{M} = \rho H h^2$ for 2D systems. Furthermore, 
+where $\mathcal{M}_m$ is the effective mass of a single grid point (in kg) of model $q_m$, i.e., $\mathcal{M} = \rho A h$ for 1D systems, and $\mathcal{M} = \rho H h^2$ for 2D systems and $a_m = (1 + \sigma_{0, m}k)$. Furthermore, 
 \begin{equation}
     q_{m,\boldsymbol{l}_m}^\star = \frac{b_m q_{m,\boldsymbol{l}_m}^n + c_m q_{m,\boldsymbol{l}_m}^{n-1}}{a_m}
 \end{equation}
@@ -465,7 +465,7 @@ the spring in Eq. \eqref{eq:nonlinearSpring} can be discretised to
 \begin{equation}\label{eq:nonlinearSpringDisc}
     f_\ctxt^n = K_{1,\ctxt}\mtd\eta_\ctxt^n + K_{3,\ctxt}(\eta_\ctxt^n)^2\mtd\eta_\ctxt^n + R_\ctxt\dtd \eta_\ctxt^n,
 \end{equation}
-which can be shown to be inherently stable \cite{theBible, Bilbao2009Modular}. The connection force can then be solved for according to
+which can be shown to be inherently stable \cite{theBible, Bilbao2009Modular}. The connection force can then be solved for according to \cite{theBible}
 \begin{equation}\label{eq:springConnDisc}
     f_c^n = \frac{\eta_c^\star + \frac{\gamma_{c,-}}{\gamma_{c,+}}\eta_c^{n-1}}{\frac{1}{\gamma_{c,+}} + \frac{k^2}{a_{r_c}\mathcal{M}_{r_c}}+ \frac{k^2}{a_{s_c}\mathcal{M}_{s_c}}},
 \end{equation}
@@ -491,10 +491,10 @@ The discretisation of the friction model in Eq. \eqref{eq:bowForce} as well as i
 % \end{equation}
 % where $p_\itxt = \floor[\chi_\itxt / h]$ and $\alpha_\itxt = \chi_\itxt /h - p_\itxt$.
 
-\subsubsection{Hammer and Pluck}
+\subsubsection{Hammer and Pluck}\label{sec:hammerPluck}
 The discrete-time definition of Eq. \eqref{eq:massSpring} will not be given here. The discretisation of a mass-spring system can be found in e.g. \cite{Bilbao2009Modular, Willemsen2020}, and a derivation of the collision between the mass-spring and a 1D system using the non-iterative collision method used here (from \cite{Ducceschi2021}) is given in \cite[Sec. 10.2]{WillemsenThesis}.
 
-For the pluck, $\tau$ will be set to 0 if $|f_\etxt / h| > \varphi$, where $\varphi$ is a threshold, which simulates a plucking interaction. Note that the force is scaled by the grid spacing of the respective resonator module so that the plucking interaction will be similar for strings with different parameters (and thus different values of $h$). 
+For the hammer, $\tau$ will be set to 0 if the user triggers this with the mouse (see Section \ref{sec:excitationPanel}). For the pluck, $\tau$ will be set to 0 if $|f_\etxt / h| > \varphi$, where $\varphi$ is a threshold, which simulates a plucking interaction. Note that the force is scaled by the grid spacing of the respective resonator module so that the plucking interaction will be similar for strings with different parameters (and thus different values of $h$). 
 
 \section{Real-Time Application}\label{sec:application}
 A real-time application implementing the models above has been created in C++ using the JUCE framework\footnote{\url{https://juce.com}}. Figure \ref{fig:gui} shows the graphical user interface of the application using the guitar preset for illustration. The application is controlled using the mouse, and is divided into three main parts: the control panel (bottom), the excitation panel (right), and the instrument area. The latter is vertically and equally subdivided over the amount of instruments in the application, which in turn are subdivided vertically and equally into the amount of resonators they contain. The instrument area has a refresh rate of 15 Hz and visualises the states of the various resonator and exciter modules.  
@@ -520,7 +520,7 @@ The \textit{Add Instrument} adds an (additional) instrument to the application. 
 \subsubsection{Resonator Modules}\label{sec:resonatorModules}
 The available resonators are: the stiff string, bar, membrane, thin plate and stiff membrane. The states of the 1D models are visualised as cyan (string) and purple (bar) lines and the states of 2D models as grey-scale squares (as done in e.g. \cite{Willemsen2019, Willemsen2020}).
 
-The \textit{Add Resonator Module} button opens a window where a user can select a resonator type as well as its parameters. For the stiff string, one can choose an advanced (all parameters) and non-advanced (only the fundamental frequency and radius) list of parameters. For 2D models, an extra parameter `maxPoints' is given which alters the grid spacing such that the number of (moving) grid points does not surpass this. This is to not overload the CPU and keep the application running in real time. A button \textit{Add Module}, adds the resonator module to the currently selected instrument.
+The \textit{Add Resonator Module} button opens a window where a user can select a resonator type as well as its parameters. For the stiff string, one can choose an advanced (all parameters) and non-advanced (only the fundamental frequency and radius) list of parameters. For 2D models, an extra parameter `maxPoints' is given which alters the grid spacing such that the number of moving grid points, i.e., those that are not fixed at the boundaries, does not surpass this. This is to not overload the CPU and keep the application running in real time (also see Section \ref{sec:resDiscuss}). A button \textit{Add Module}, adds the resonator module to the currently selected instrument.
 
 The \textit{Remove Resonator Modules} button changes the buttons in the control panel to \textit{Remove} and \textit{Done}. Clicking on a resonator module adds a red overlay, and clicking the \textit{Remove} button removes the resonator from the instrument.
 
@@ -546,7 +546,7 @@ Presets are saved in `.xml' files and have the structure shown in Figure \ref{fi
 
 Pressing the \textit{Load Preset} button causes a `File Chooser' window to pop up, where the user can select a local `.xml' file containing a preset. The \textit{Save Preset} button makes a window pop up with a text box into which the desired name of the current application configuration can be saved. If a file with that name already exists a warning window will pop up asking whether the existing file may be overwritten.
 
-As different sample rates yield different values for $h$ (through Eq. \eqref{eq:stability}) and thus the number of grid points for each resonator, the locations of the outputs and connections are saved as ratios of the total number of grid points of the respective resonator. This allows the for the same relative locations of outputs and connections for one preset between different sample rates.
+As different sample rates yield different values for $h$ (through Eq. \eqref{eq:stability}) and thus the number of grid points for each resonator, the locations of the outputs and connections are saved as ratios of the total number of grid points of the respective resonator. This allows for the same relative locations of outputs and connections for one preset between different sample rates.
 
 \begin{figure}[h]
     \centering
@@ -600,7 +600,6 @@ As described in Section \ref{sec:resonatorModules}, the parameters of the resona
 \caption{List of fixed parameter values (see Section \ref{sec:fixedParams}).}
 \end{center}
 \end{table}
-
 \section{Results and Discussion}\label{sec:resDiscuss}
 Table \ref{tab:CPU} shows the CPU usage of the application with various settings and graphics turned off and on. Tests were carried out on a MacBook Pro with a 2,3 GHz Intel i9 processor. Results show that for many different configurations, the application is still able to run in real time (usage $<100\%$).
 
@@ -629,12 +628,13 @@ The graphics increase the CPU usage substantially, especially when connections n
     \label{tab:CPU}
 \end{table}
 
-
 % Right now, changes between sample rates are not included in the functionality of the application. As the sample rate is linked to the number of grid points, the locations of the outputs and connections are not included in the   the presets assume a sample
+
+To ensure that the application runs in real time, several things need to be considered. One example is the `maxPoints' variable, limiting the number of grid points for 2D systems mentioned in Section \ref{sec:resonatorModules}. Using fewer grid points reduces the simulation quality and the frequency bandwidth of the model at hand \cite{theBible}. Furthermore, it has been chosen to only use explicit models, which, although more computationally cheap, cause detuning of modes in models with high stiffness values such as bars and plates \cite{theBible}. These effects, however, have been found to be less important for stringed instrument models, due to the large amount of damping of bars and plates and the inharmonic nature of models with high stiffness. 
 
 As mentioned in Section \ref{sec:connectionsApp}, overlapping connections are not possible in the current work. Although experiments with overlapping connections have been done, it has been decided to exclude these from the application. Following \cite{Bilbao2009Modular}, although any number of overlapping connections can be explicitly calculated, one needs to perform a matrix inversion every sample. Therefore, it was decided to exclude overlapping connections from the application. 
 
-As mentioned in Section \ref{sec:introduction}, this application is part of a larger project, where will be used as a sound engine for a VR application. Hence, no usability tests have been performed, and are saved for the final product.
+% As mentioned in Section \ref{sec:introduction}, this application is part of a larger project, where will be used as a sound engine for a VR application. Hence, no usability tests have been performed, and are saved for the final product.
 
 % To the best of the authors' knowledge, the way of real-time interactive excitation used for the hammer and the pluck applied to FDTD schemes has not been done before. %\SWcomment[@stefania, is this true? And should this be here?]
 
@@ -642,7 +642,7 @@ As mentioned in Section \ref{sec:introduction}, this application is part of a la
 This paper presented an application implementing various resonator modules using FDTD schemes which can be connected in a modular fashion to create (non)existing musical instruments. The instruments can be played in real time using bowing, hammering and plucking excitations.
 
 Future work includes adding a greater variety of resonator modules (such as acoustic tubes) to the application, as well as applying the excitations presented here to 2D systems. It might also be interesting to explore the ability to add inputs to the resonator modules so that the application can be used as an audio effect. 
-Finally, the authors would like to implement this system into a VR application where users will be able to build and play instruments in a virtual environment. 
+Finally, this application could be embedded in a VR application where users will be able to build and play instruments in a virtual environment. 
 
 \begin{acknowledgments}
 This work has been funded in part by the European Art-Science-Technology Network for Digital Creativity (EASTN-DC), project number 883023.
