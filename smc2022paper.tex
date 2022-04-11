@@ -14,6 +14,8 @@
 \def\TLcomment[#1]{\textcolor{red}{#1}}
 \def\SWcomment[#1]{\textcolor{blue}{#1}}
 \def\SScomment[#1]{\textcolor{orange}{#1}}
+\usepackage{textcomp}
+\newcommand{\textApprox}{\raisebox{0.5ex}{\texttildelow}}
 
 %%%%%%%%%%%%%%%%%%%%%%%% Some useful packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%% See related documentation %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -140,7 +142,7 @@ Through recent advances in processing power, physical modelling using finite-dif
 \section{Introduction}\label{sec:introduction}
 Any acoustic musical instrument can be subdivided into a resonator and exciter component \cite{Borin1989}. Examples of resonator-exciter combinations are the violin and the bow, and the guitar and the pick. Many resonators, such as those mentioned here, can be further subdivided into basic components, i.e., a set of individual strings, a bridge and a wooden body. As many instruments consist of the same basic resonators -- simply with different geometries or made from different materials -- one can imagine some application that can implement many musical instruments based on the same fundamental resonator components in a modular fashion. Using physical modelling to implement these resonators allows for accurate implementation of the resonators, as well as the interactions between them.  
 
-Modularity in physical modelling sound synthesis is by no means a new concept. The earliest example of a modular system for sound synthesis was due to Cadoz \textit{et al.} \cite{Cadoz1983}, with the CORDIS system that allows complex instruments to be created using simple mass-spring systems. Later, Morrison and Adrien created Mosaic \cite{Morrison1993}, a modular environment using modal synthesis \cite{Adrien1991}. Rabenstein \textit{et al.} presented modular physical models with a block-based approach using wave digital filters \cite{Rabenstein2007} and digital waveguides \cite{Smith1992}. 
+Modularity in physical modelling sound synthesis is by no means a new concept. The earliest example of a modular system for sound synthesis was due to Cadoz \textit{et al.} \cite{Cadoz1983}, with the CORDIS system that allows complex instruments to be created using simple mass-spring systems. Later, modular systems based on mass-spring systems appeared in various publications \cite{Castagne2002, Berdahl2012, Leonard2019}. Morrison and Adrien created Mosaic \cite{Morrison1993}, a modular environment using modal synthesis \cite{Adrien1991}, more recently used by van Walstijn \textit{et al.} in \cite{Walstijn2017}. Rabenstein \textit{et al.} presented modular physical models with a block-based approach using wave digital filters \cite{Rabenstein2007} and digital waveguides \cite{Smith1992}. 
 
 Finite-difference time-domain (FDTD) methods, first used in a musical context by Ruiz \cite{Ruiz1969}, Hiller and Ruiz \cite{Hiller1971I, Hiller1971II} and later by Chaigne \cite{Chaigne1992}, also lend themselves to modularity. In \cite{Bilbao2009Modular}, Bilbao presents a modular environment where bars and plates are connected by nonlinear springs, and in \cite{Bilbao2014} Bilbao \textit{et al.} propose a modular environment including higher dimensional systems.
 
